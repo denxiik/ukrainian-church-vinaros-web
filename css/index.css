@@ -1,0 +1,487 @@
+@import url('styles.css');
+
+/* -------------------------
+    HOME SECTION (home)
+------------------------- */
+.home {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh);
+    background-color: var(--blue);
+    position: relative;
+    margin-bottom: 10rem;
+}
+
+
+.home .title {
+    position: static;
+    margin-top: 1%;
+    margin-left: 10%;
+    font-size: 2.2rem;
+    color: var(--yellow);
+    font-weight: 100;
+    letter-spacing: 3px;
+    max-width: 70%;
+}
+
+.home .title em {
+    font-weight: 100;
+    font-size: 2rem;
+}
+
+.home .images {
+    display: flex;
+    position: static;
+    margin-top: 3rem;
+}
+
+.home .image {
+    position: static;
+    padding: auto;
+    margin-bottom: -5rem;
+    width: 60%;
+    height: auto;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.home .subimage {
+    position: absolute;
+    padding: auto;
+    bottom: 8%;
+    left: 70%;
+    width: 15rem;
+    height: auto;
+}
+
+/* -------------------------
+    SUBHOME SECTION (subhome)
+------------------------- */
+.subhome {
+    display: flex;
+    min-height: calc(50vh);
+    padding-bottom: 5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.subhome-text-container {
+    width: 50%;
+    padding-left: 10%;
+}
+
+.subhome-title {
+    color: var(--blue);
+    font-size: 1.8rem;
+    font-weight: 100;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.subhome-image-container {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.subhome-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    object-fit: cover;
+}
+
+/* -------------------------
+   OUR BENEFITS SECTION
+------------------------- */
+.our-benefits {
+    position: relative;
+    display: flex;
+}
+
+/* Main text (title and subtitle) */
+.our-benefits-name {
+    padding-left: 5rem;
+    padding-top: 12rem;
+    width: 50%;
+}
+
+.our-benefits-name .title {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: var(--yellow);
+}
+
+.our-benefits-name .subtitle {
+    font-weight: lighter;
+    color: var(--blue);
+    font-size: 1.5rem;
+}
+
+/* List of benefits (right part of 2x2 grid benefits) */
+.our-benefits-list {
+    width: 65%;
+    padding-top: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    display: block;
+}
+
+.our-benefits-list .field {
+    display: flex;
+}
+
+.our-benefits-list .field .item {
+    background-color: var(--darker-blue);
+    margin: 1rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.our-benefits-list .field .item .title,
+.our-benefits-list .field .item .subtitle,
+.our-benefits-list .field .item .more {
+    margin-left: 5%;
+    margin-right: 15%;
+}
+
+.our-benefits-list .field .item .title {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    height: 2rem;
+    color: var(--yellow);
+    display: flex;
+    align-items: center;
+}
+
+.our-benefits-list .field .item .subtitle {
+    height: 4rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: var(--darker-yellow);
+    font-weight: normal;
+}
+
+.our-benefits-list .field .item .more {
+    margin-top: 2rem;
+    height: 4rem;
+    font-size: 1rem;
+    color: white;
+}
+
+/* -------------------------
+    SERVICE-BENEFITS SECTION (service-benefits)
+------------------------- */
+.service-benefits {
+    display: flex;
+    padding-top: 10%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.service-benefits .title {
+    width: 100%;
+    font-size: 2rem;
+    padding: 3rem;
+    text-align: center;
+    background-color: var(--darker-yellow);
+    color: white;
+}
+
+.grid-container {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 0;
+}
+
+.grid-item h3 {
+    flex-shrink: 0;
+    padding: 2rem 4rem;
+    height: 6rem;
+    color: white;
+    background-color: var(--blue);
+    font-size: 1.2em;
+    margin-top: auto;
+}
+
+.grid-item-center h3 {
+    background-color: var(--darker-yellow);
+}
+
+/* -------------------------
+   OUR LIFE SECTION
+------------------------- */
+.our-life {
+    margin: 5%;
+    position: relative;
+}
+
+.our-life .image {
+    border-radius: 25px;
+    max-width: 100%;
+}
+
+/* Content */
+.our-life .content {
+    position: absolute;
+    color: white;
+    left: 7%;
+    max-width: 35%;
+    top: 25%;
+    text-align: left;
+}
+
+.our-life .content .title {
+    margin-bottom: 8%;
+    font-size: 1.5rem;
+}
+
+.our-life .content .subtitle {
+    margin-bottom: 8%;
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.our-life .content .more {
+    color: #97e372;
+    text-decoration: none;
+}
+
+/* Small devices (phones, 768px and down) */
+@media (max-width: 768px) {
+
+    /* -------------------------
+        HOME SECTION (home)
+    ------------------------- */
+    .home {
+        min-height: auto;
+        margin-bottom: 0rem;
+        align-items: center;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .home .title {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .home .images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home .image {
+        width: 80%;
+        margin-bottom: 1rem;
+        padding: 0;
+        left: auto;
+        right: auto;
+    }
+
+    .home .subimage {
+        position: static;
+        left: 0%;
+        bottom: 1rem;
+        margin-top: 1rem;
+        right: 0%;
+        width: 10rem;
+    }
+
+    /* -------------------------
+        SUBHOME SECTION (subhome)
+    ------------------------- */
+    .subhome {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .subhome .title {
+        position: static;
+        text-align: center;
+        margin-left: 0%;
+        margin-top: 8%;
+        font-size: 1.2rem;
+        font-weight: 100;
+    }
+
+    .subhome .image {
+        position: static;
+        padding-left: 0rem;
+        width: 60%;
+        height: auto;
+        padding-top: 2rem;
+    }
+
+    /* -------------------------
+        OUR CHURCH SECTIONS
+    ------------------------- */
+    .our-church {
+        flex-direction: column;
+    }
+
+    .our-church .title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .our-church .subtitle {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* -------------------------
+        SERVICE-BENEFITS SECTION (service-benefits)
+    ------------------------- */
+    .service-benefits .title {
+        font-size: 1.2rem;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .grid-item h3 {
+        font-size: 0.8em;
+    }
+
+    /* -------------------------
+        OUR LIFE SECTION
+    ------------------------- */
+    .our-life .content {
+        max-width: 30%;
+        top: 40%;
+    }
+
+    .our-life .content .title {
+        font-size: flex;
+        margin-bottom: 0%;
+    }
+
+    .our-life .content .subtitle {
+        visibility: collapse;
+        font-size: 0;
+    }
+
+    .our-life .content .more {
+        position: absolute;
+    }
+}
+
+/* Large devices (desktops, 992px and down) */
+@media (max-width: 992px) {
+    /* -------------------------
+        OUR CHURCH SECTIONS
+    ------------------------- */
+    .our-church .title {
+        margin-top: 0%;
+        font-size: 2.5rem;
+    }
+
+    .our-church .subtitle {
+        line-height: 1.2;
+        font-size: 1rem;
+    }
+
+    /* -------------------------
+        OUR LIFE SECTION
+    ------------------------- */
+    .our-life {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .our-life .content {
+        text-align: justify;
+        margin-top: -3rem;
+    }
+}
+
+/* Large devices (desktops, 768px and up) */
+@media (min-width: 1080px) {
+
+    /* -------------------------
+        HOME SECTION (home)
+    ------------------------- */
+    .home {
+        min-height: calc(110vh);
+    }
+
+    .home .title {
+        font-size: 4em;
+    }
+
+    .home .images {
+        margin-top: 4rem;
+    }
+
+    .home .subimage {
+        width: 25rem;
+        bottom: 10%;
+    }
+
+    /* -------------------------
+        SUBHOME SECTION (subhome)
+    ------------------------- */
+    .subhome {
+        display: flex;
+        min-height: calc(50vh);
+    }
+
+    .subhome .title {
+        font-size: 2.5rem;
+    }
+
+    .subhome .image {
+        width: 65%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* -------------------------
+        OUR CHURCH SECTIONS
+    ------------------------- */
+    .our-church .title {
+        width: 45%;
+        margin-top: 2%;
+    }
+
+    .our-church .subtitle {
+        width: 55%;
+        padding-left: 2%;
+        line-height: 1.5;
+        font-size: 1.8rem;
+    }
+
+    /* -------------------------
+        OUR LIFE SECTION
+    ------------------------- */
+    .our-life .content .title {
+        font-size: 2rem;
+    }
+
+    .our-life .content .subtitle {
+        font-size: 1.2rem;
+    }
+}

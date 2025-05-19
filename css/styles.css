@@ -1,0 +1,96 @@
+/* -------------------------
+    BASIC RESET
+------------------------- */
+@font-face {
+    font-family: 'Borna';
+    src: url('../fonts/Borna-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Borna';
+    src: url('../fonts/Borna-RegularItalic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Borna';
+    src: url('../fonts/Borna-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Borna';
+    src: url('../fonts/Borna-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Borna';
+    src: url('../fonts/Borna-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Borna';
+    src: url('../fonts/Borna-SemiBoldItalic.otf') format('opentype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Borna';
+    src: url('../fonts/Borna-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Borna';
+    src: url('../fonts/Borna-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+:root {
+    --blue: #0057B7;
+    --darker-blue: #0057D7;
+    --yellow: #FFD700;
+    --darker-yellow: #FFD750;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Borna';
+    background-color: #fff;
+    color: #333;
+}
+
+button {
+    background-color: var(--green-aso);
+    color: var(--white);
+    border: none;
+    padding: 8px 30px;
+    letter-spacing: 3px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font: borna;
+    transition: transform 0.2s ease-in-out;
+    transform-origin: center;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
