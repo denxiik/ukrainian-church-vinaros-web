@@ -65,12 +65,12 @@
     justify-content: space-between;
 }
 
-.subhome-text-container {
+.subhome .text-container {
     width: 50%;
     padding-left: 10%;
 }
 
-.subhome-title {
+.subhome .text-container .title {
     color: var(--blue);
     font-size: 1.8rem;
     font-weight: 100;
@@ -78,13 +78,13 @@
     margin: 0;
 }
 
-.subhome-image-container {
+.subhome .image-container {
     width: 40%;
     display: flex;
     justify-content: flex-end;
 }
 
-.subhome-image {
+.subhome .image-container .image {
     width: 100%;
     height: auto;
     max-width: 100%;
@@ -194,13 +194,14 @@
 .grid-container {
     position: static;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .grid-item {
     display: flex;
     flex-direction: column;
     text-align: center;
+    max-height: 40%;
 }
 
 .grid-item img {
@@ -229,12 +230,13 @@
 ------------------------- */
 .our-life {
     margin: 5%;
+    margin-top: -15%;
     position: relative;
 }
 
 .our-life .image {
     border-radius: 25px;
-    max-width: 100%;
+    width: 100%;
 }
 
 /* Content */
@@ -242,25 +244,44 @@
     position: absolute;
     color: white;
     left: 7%;
-    max-width: 35%;
-    top: 25%;
+    max-width: 55%;
+    top: 15%;
     text-align: left;
 }
 
 .our-life .content .title {
-    margin-bottom: 8%;
-    font-size: 1.5rem;
+  margin-bottom: 8%;
+  font-size: 3rem;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black,
+    -1px 0 0 black,
+    0 -1px 0 black,
+    1px 0 0 black,
+    0 1px 0 black;
 }
 
 .our-life .content .subtitle {
-    margin-bottom: 8%;
-    font-size: 1rem;
-    font-weight: 100;
+  margin-bottom: 8%;
+  font-size: 2rem;
+  font-weight: 100;
+  color: #eee;
+  text-shadow:
+    -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333,
+    -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333, 2px 2px 0 #333,
+    -1px 0 0 #333, 0 -1px 0 #333, 1px 0 0 #333, 0 1px 0 #333;
 }
 
 .our-life .content .more {
     color: #97e372;
     text-decoration: none;
+    font-size: 2rem;
+    text-shadow:
+    -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333,
+    -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333, 2px 2px 0 #333,
+    -1px 0 0 #333, 0 -1px 0 #333, 1px 0 0 #333, 0 1px 0 #333;
 }
 
 /* Small devices (phones, 768px and down) */
@@ -271,7 +292,7 @@
     ------------------------- */
     .home {
         min-height: auto;
-        margin-bottom: 0rem;
+        margin-bottom: 3rem;
         align-items: center;
         gap: 20px;
         display: flex;
@@ -295,6 +316,8 @@
         padding: 0;
         left: auto;
         right: auto;
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
     }
 
     .home .subimage {
@@ -312,9 +335,10 @@
     .subhome {
         align-items: center;
         flex-direction: column;
+        align-items: center;
     }
 
-    .subhome .title {
+    .subhome .text-container .title {
         position: static;
         text-align: center;
         margin-left: 0%;
@@ -323,12 +347,17 @@
         font-weight: 100;
     }
 
-    .subhome .image {
+    .subhome .image-container {
+        width: 65%;
+        align-items: center;
+    }
+
+    .subhome .image-container .image {
         position: static;
-        padding-left: 0rem;
-        width: 60%;
+        width: 100%;
         height: auto;
-        padding-top: 2rem;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
     }
 
     /* -------------------------
@@ -370,7 +399,6 @@
     ------------------------- */
     .our-life .content {
         max-width: 30%;
-        top: 40%;
     }
 
     .our-life .content .title {
@@ -413,7 +441,54 @@
 
     .our-life .content {
         text-align: justify;
-        margin-top: -3rem;
+        margin-top: -1rem;
+        max-width: 100%;
+    }
+
+    .our-life .content .title {
+        font-size: 2.2rem;
+    }
+
+    .our-life .content .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .our-life .content .more {
+        font-size: 1.2rem;
+        margin-top: -20%;
+    }
+
+    /* -------------------------
+        OUR BENEFITS SECTIONS
+    ------------------------- */
+    .our-benefits {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .our-benefits-name {
+        padding-top: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .our-benefits-list {
+        width: 100%;
+        padding-top: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+
+    .our-benefits-list .field .item {
+        margin: 0.5rem;
+    }
+
+    .our-benefits-list .field .item .subtitle {
+        height: 2rem;
+        font-size: 1rem;
     }
 }
 
@@ -478,10 +553,10 @@
         OUR LIFE SECTION
     ------------------------- */
     .our-life .content .title {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .our-life .content .subtitle {
-        font-size: 1.2rem;
+        font-size: 2.2rem;
     }
 }
