@@ -427,6 +427,7 @@ body.white-text-mode .our-life .content .title h3 {
         margin-bottom: 1rem;
         padding: 0;
         left: auto;
+        border-radius: 25px;
         right: auto;
     }
 
@@ -460,7 +461,8 @@ body.white-text-mode .our-life .content .title h3 {
         padding-left: 0rem;
         width: 60%;
         height: auto;
-        padding-top: 2rem;
+        margin-top: 2rem;
+        border-radius: 25px;
     }
 
     /* -------------------------
