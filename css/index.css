@@ -178,6 +178,14 @@ body.white-text-mode .subhome .title {
     color: #97e372;
 }
 
+.our-benefits-list .field .item .more-link {
+    text-decoration: none;
+}
+
+.our-benefits-list .field .item .more-link:hover {
+    text-decoration: underline;
+}
+
 /* -------------------------
     SERVICE-BENEFITS SECTION (service-benefits)
 ------------------------- */

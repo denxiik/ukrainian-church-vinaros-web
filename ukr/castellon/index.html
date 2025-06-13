@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Церква</title>
+    <link rel="icon" href="../../img/logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/locality.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Script -->
+    <script src="../../script/script.js"></script>
+
+    <!-- Hreflang tags (for SEO) -->
+    <link rel="alternate" hreflang="en" href="https://nasha-tserkva/en/" />
+    <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/" />
+</head>
+
+<!-- HEADER SECTION (header) -->
+<header id="header-placeholder"></header>
+
+<body>
+
+    <div class="locality-container">
+        <img src="../../img/castellon-inside.jpg" alt="Українська Парафія у м. Кастельйон">
+        <h3>
+            Кастельйон
+        </h3>
+
+        <h4>
+            Українська Парафія у м. Кастельйон
+        </h4>
+
+        <h5>
+            Адреса: Calle Alloza, 143, 12001 Castellón, Іспанія
+        </h5>
+
+        <p class="paragraph-normal">
+            Українська парафія у місті Кастельйон перебуває на етапі свого народження, поступово формуючи духовну спільноту
+            для вірних українського народу. У 2024 році парафія відновила своє існування після тривалої перерви. Перша
+            Божественна Літургія у відновленій спільноті була відслужена 16 листопада 2024 року. Парафія українців у
+            Кастельйоні функціонує з благословення єпископа Сегорбе-Кастельйону, преосвященного Касіміро Лопеса Льоренте
+            (Casimiro López Llorente)
+        </p>
+        <hr class="separator">
+    </div>
+</body>
+
+<!-- FOOTER SECTION (footer) -->
+<footer id="footer-placeholder"></footer>
+
+<script>
+    // Load with page
+    document.addEventListener('DOMContentLoaded', function () {
+        // Load all HTML fragments first
+        const headerPromise = loadHTML('../../ukr/header/index.html', 'header-placeholder');
+        const footerPromise = loadHTML('../../ukr/footer/index.html', 'footer-placeholder');
+
+        Promise.all([headerPromise, footerPromise])
+            .then(() => {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navBar = document.querySelector('.nav-bar');
+                const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
+
+                if (menuToggle && navBar) {
+                    menuToggle.addEventListener('click', function () {
+                        navBar.classList.toggle('active');
+
+                        // Close all dropdowns when the main menu is toggled
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    });
+                } else {
+                    console.warn("Menu toggle o nav bar no encontrados. Revisa tu estructura HTML.");
+                }
+
+                // Add click listener to each dropdown for mobile view
+                dropdowns.forEach(dropdown => {
+                    const dropdownLink = dropdown.querySelector('a');
+                    if (dropdownLink) {
+                        dropdownLink.addEventListener('click', function (event) {
+                            // Check if we are on a small screen
+                            if (window.innerWidth <= 1080) {
+                                event.preventDefault();
+                                dropdown.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+
+            })
+            .catch(error => {
+                console.error('One or more HTML fragments failed to load:', error);
+            });
+
+
+    });
+
+
+</script>
+
+</html>

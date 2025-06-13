@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Церква</title>
+    <link rel="icon" href="../../img/logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/locality.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Script -->
+    <script src="../../script/script.js"></script>
+
+    <!-- Hreflang tags (for SEO) -->
+    <link rel="alternate" hreflang="en" href="https://nasha-tserkva/en/" />
+    <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/" />
+</head>
+
+<!-- HEADER SECTION (header) -->
+<header id="header-placeholder"></header>
+
+<body>
+
+    <div class="locality-container">
+        <img src="../../img/vinaros-inside.jpg" alt="Парафія Української Греко-Католицької Церкви у м. Вінарос">
+
+        <h3>
+            Вінарос
+        </h3>
+
+        <h4>
+            Парафія Української Греко-Католицької Церкви у м. Вінарос
+        </h4>
+
+        <h5>
+            Адреса: Plaça de Sant Valent, 18, 12500 Vinaròs, Castelló
+        </h5>
+
+        <p class="paragraph-normal">
+            Українська парафія у місті Вінарос є духовним осередком для вірних Української Греко-Католицької Церкви, які
+            проживають у цьому регіоні Іспанії. Капеланом парафії є о. Юрій Шабанов, який розпочав своє служіння в
+            жовтні
+            2024 року.
+            <br> <br>
+            <strong>Щонеділі о 10:00</strong> громада збирається на Божественну Літургію, де разом молиться, дякує
+            Богові та підтримує одне
+            одного у вірі. Парафія активно розвивається, об'єднуючи українців довкола спільної молитви, традицій та
+            культури.
+            <br> <br>
+            При парафії діє <strong>катехитична школа для дітей,</strong> які готуються до Першої Святої Сповіді та
+            Урочистого Святого
+            Причастя. Навчання допомагає малим парафіянам краще пізнати основи християнської віри та підготуватися до
+            важливих моментів духовного життя.
+            <br> <br>
+            Щиро запрошуємо всіх українців та охочих приєднатися до нашої спільноти!
+            Нехай наша парафія стане для вас духовною домівкою, місцем підтримки, надії та живого спілкування з Богом і
+            ближніми.
+        </p>
+        <hr class="separator">
+    </div>
+
+</body>
+
+<!-- FOOTER SECTION (footer) -->
+<footer id="footer-placeholder"></footer>
+
+<script>
+    // Load with page
+    document.addEventListener('DOMContentLoaded', function () {
+        // Load all HTML fragments first
+        const headerPromise = loadHTML('../../ukr/header/index.html', 'header-placeholder');
+        const footerPromise = loadHTML('../../ukr/footer/index.html', 'footer-placeholder');
+
+        Promise.all([headerPromise, footerPromise])
+            .then(() => {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navBar = document.querySelector('.nav-bar');
+                const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
+
+                if (menuToggle && navBar) {
+                    menuToggle.addEventListener('click', function () {
+                        navBar.classList.toggle('active');
+
+                        // Close all dropdowns when the main menu is toggled
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    });
+                } else {
+                    console.warn("Menu toggle o nav bar no encontrados. Revisa tu estructura HTML.");
+                }
+
+                // Add click listener to each dropdown for mobile view
+                dropdowns.forEach(dropdown => {
+                    const dropdownLink = dropdown.querySelector('a');
+                    if (dropdownLink) {
+                        dropdownLink.addEventListener('click', function (event) {
+                            // Check if we are on a small screen
+                            if (window.innerWidth <= 1080) {
+                                event.preventDefault();
+                                dropdown.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+
+            })
+            .catch(error => {
+                console.error('One or more HTML fragments failed to load:', error);
+            });
+
+
+    });
+
+
+</script>
+
+</html>
