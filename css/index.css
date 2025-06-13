@@ -105,6 +105,7 @@ body.white-text-mode .subhome .title {
 .our-benefits {
     position: relative;
     display: flex;
+    background-color: var(--light-yellow);
 }
 
 /* Main text (title and subtitle) */
