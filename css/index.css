@@ -271,67 +271,64 @@ body.white-text-mode .grid-item-center .paragraph-bold {
 }
 
 /* -------------------------
-   OUR LIFE SECTION
+    OUR LIFE SECTION (our-life)
 ------------------------- */
 .our-life {
-    margin: 5%;
-    margin-top: 5%;
-    position: relative;
-    align-items: flex-end;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
 }
 
-.our-life .image {
-    width: 100%;
-    max-height: 45rem;
-    height: auto;
-    object-fit: cover;
-    object-position: bottom;
-    display: block;
-    border-radius: 25px;
+body.high-contrast .our-life,
+body.white-text-mode .our-life {
+    background-color: #000 !important;
 }
 
-/* Content */
 .our-life .content {
-    position: absolute;
-    color: white;
-    left: 7%;
-    max-width: 55%;
-    top: 15%;
-    text-align: left;
+    display: flex;
+    flex-direction: row;
 }
 
 .our-life .content .title {
-    margin-bottom: 8%;
-    text-shadow:
-        -1px -1px 0 black,
-        1px -1px 0 black,
-        -1px 1px 0 black,
-        1px 1px 0 black,
-        -1px 0 0 black,
-        0 -1px 0 black,
-        1px 0 0 black,
-        0 1px 0 black;
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    width: 45%;
 }
 
-.our-life .content .subtitle {
-    margin-bottom: 8%;
-    font-weight: 100;
-    color: #eee;
-    text-shadow:
-        -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333,
-        -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333, 2px 2px 0 #333,
-        -1px 0 0 #333, 0 -1px 0 #333, 1px 0 0 #333, 0 1px 0 #333;
+.our-life .content .title h3 {
+    padding: 25px 0px;
+    color: var(--yellow);
 }
 
-.our-life .content .more {
-    color: #97e372;
+body.high-contrast .our-life .content .title h3,
+body.white-text-mode .our-life .content .title h3 {
+    color: #BDF24B !important;
+}
+
+.our-life .content img {
+    position: static;
+    margin-left: auto;
+    margin-right: 3%;
+    margin-bottom: 8%;
+    border-radius: 25px;
+    width: 40%;
+    z-index: 1;
+}
+
+.our-life .content .title .more {
+    padding: 300px;
+}
+
+.our-life .more {
     text-decoration: none;
-    text-shadow:
-        -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333,
-        -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333, 2px 2px 0 #333,
-        -1px 0 0 #333, 0 -1px 0 #333, 1px 0 0 #333, 0 1px 0 #333;
 }
+
+.our-life .more:hover {
+    text-decoration: underline;
+}
+
 
 /* Simple responsive fix (example for smaller screens) */
 /* Small devices (landscape phones, 576px and down) */
@@ -468,24 +465,7 @@ body.white-text-mode .grid-item-center .paragraph-bold {
         padding: 2.2rem 1rem;
     }
 
-    /* -------------------------
-        OUR LIFE SECTION
-    ------------------------- */
-    .our-life .content {
-        max-width: 30%;
-    }
-
-    .our-life .content .title {
-        margin-bottom: 0%;
-    }
-
-    .our-life .content .subtitle {
-        visibility: collapse;
-    }
-
-    .our-life .content .more {
-        position: absolute;
-    }
+    
 }
 
 /* Large devices (desktops, 992px and down) */
@@ -525,22 +505,32 @@ body.white-text-mode .grid-item-center .paragraph-bold {
     }
 
     /* -------------------------
-        OUR LIFE SECTION
+        OUR  LIFE SECTION (our-life)
     ------------------------- */
-    .our-life {
+    .our-life .content {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
-    .our-life .content {
-        text-align: justify;
-        margin-top: -1rem;
-        max-width: 100%;
+    .our-life .content .title {
+        padding-left: auto;
+        width: 90%;
+        align-items: center;
+        text-align: center;
     }
 
-    .our-life .content .more {
-        margin-top: -20%;
+    .our-life .content img {
+        margin-right: auto;
+        width: 70%;
+        margin-top: 5%;
+        margin-bottom: 10%;
     }
+
+    .our-life .features {
+        padding: 10% 10%;
+    }
+
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
