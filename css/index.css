@@ -339,11 +339,12 @@ body.white-text-mode .our-life .content .title h3 {
     ------------------------- */
     .our-benefits-list .field .item .title {
         margin-top: 1rem;
+        font-size: 1.2rem;
     }
+
 
     .our-benefits-list .field .item .subtitle {
         margin-top: 0.5rem;
-        height: 6rem;
     }
 
     .our-benefits-list .field .item .more {
