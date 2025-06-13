@@ -214,6 +214,10 @@ body.white-text-mode .service-benefits .title {
     overflow: hidden;
 }
 
+.grid-item:hover .image-container img {
+    transform: scale(0.9); /* Zooms out to 90% of its original size */
+}
+
 .grid-item .image-container {
     width: 100%;
     overflow: hidden;
@@ -229,6 +233,7 @@ body.white-text-mode .service-benefits .title {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease-in-out;
 }
 
 .grid-item .paragraph-bold {
@@ -272,11 +277,18 @@ body.white-text-mode .grid-item-center .paragraph-bold {
     margin: 5%;
     margin-top: 5%;
     position: relative;
+    align-items: flex-end;
+    overflow: hidden;
 }
 
 .our-life .image {
-    border-radius: 25px;
     width: 100%;
+    max-height: 45rem;
+    height: auto;
+    object-fit: cover;
+    object-position: bottom;
+    display: block;
+    border-radius: 25px;
 }
 
 /* Content */
