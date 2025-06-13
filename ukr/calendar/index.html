@@ -122,8 +122,8 @@
         console.log("DOM Content Loaded event fired in index.html.");
 
         // Load all HTML fragments first
-        const headerPromise = loadHTML('../../ukr/header/index.html', 'header-placeholder');
-        const footerPromise = loadHTML('../../ukr/footer/index.html', 'footer-placeholder');
+        const headerPromise = loadHTML('../header/index.html', 'header-placeholder');
+        const footerPromise = loadHTML('../footer/index.html', 'footer-placeholder');
 
         Promise.all([headerPromise, footerPromise])
             .then(() => {

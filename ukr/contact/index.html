@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти</title>
+    <link rel="icon" href="../../img/asoPMR-logo-rounded.webp">
+
+    <link rel="stylesheet" href="../../css/contact.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script src="../../script/script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <link rel="alternate" hreflang="en" href="https://asopmr.org/en/contact.html" />
+    <link rel="alternate" hreflang="es" href="https://asopmr.org/es/contact.html" />
+</head>
+
+<header id="header-placeholder"></header>
+
+<body>
+    <section class="contact">
+        <div class="contact-info">
+            <p class="paragraph-bold title">Зв'яжіться з нами.</p>
+            <h3>Раді бачити, що ви дійшли сюди!</h3>
+
+            <div class="address">
+                <p class="paragraph-bold">Адреси:</p>
+                <p class="paragraph-normal">Plaça de Sant Valent, 18, 12500 Vinaròs</p>
+                <p class="paragraph-normal">Plaza de la Iglesia, 12596 Torreblanca</p>
+                <p class="paragraph-normal">Calle Alloza, 143, 12001 Castellón</p>
+            </div>
+
+            <p class="paragraph-bold">Маєте запитання?</p>
+            <p class="paragraph-normal">Надішліть нам листа</p>
+            <a href="mailto:asopmr@asopmr.org">
+                <button>
+                    yuriishabanov1846@gmail.com
+                </button>
+            </a>
+            <p class="paragraph-normal">Або заповніть форму, і ми незабаром зв'яжемося з вами!</p>
+        </div>
+
+        <div class="contact-form-container">
+            <form class="contact-form" action="" method="POST">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Ім'я:" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Електронна пошта:" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" placeholder="Повідомлення" required></textarea>
+                </div>
+                <div class="g-recaptcha-wrapper">
+                    <div class="g-recaptcha" data-sitekey="6LdJMlsrAAAAAF-UCCWgAE-11JA8W7qBb8A0tlMz=s"></div>
+                </div>
+                <button type="submit">Надіслати</button>
+            </form>
+        </div>
+    </section>
+</body>
+
+<script>
+    // Load with page
+    document.addEventListener('DOMContentLoaded', function () {
+        const headerPromise = loadHTML('../header/index.html', 'header-placeholder'); 
+
+        Promise.all([headerPromise])
+            .then(() => {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navBar = document.querySelector('.nav-bar');
+                const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
+
+                if (menuToggle && navBar) {
+                    menuToggle.addEventListener('click', function () {
+                        navBar.classList.toggle('active');
+
+                        // Close all dropdowns when the main menu is toggled
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    });
+                } else {
+                    console.warn("Menu toggle або панель навігації не знайдено. Перевірте структуру HTML.");
+                }
+
+                // Add click listener to each dropdown for mobile view
+                dropdowns.forEach(dropdown => {
+                    const dropdownLink = dropdown.querySelector('a');
+                    if (dropdownLink) {
+                        dropdownLink.addEventListener('click', function (event) {
+                            // Check if we are on a small screen
+                            if (window.innerWidth <= 1080) {
+                                event.preventDefault();
+                                dropdown.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+                
+            })
+            .catch(error => {
+                console.error('Не вдалося завантажити один або кілька HTML-фрагментів:', error);
+            });
+    });
+</script>
+
+</html>
