@@ -47,6 +47,8 @@ body.white-text-mode .home .title {
     width: 55%;
     height: 30%;
     object-fit: cover;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
     flex-shrink: 0;
 }
 
@@ -97,6 +99,8 @@ body.white-text-mode .subhome .title {
     flex-shrink: 0;
     flex-grow: 0;
     margin-right: 0%;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
 }
 
 /* -------------------------
