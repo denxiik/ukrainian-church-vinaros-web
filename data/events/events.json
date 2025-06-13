@@ -1,0 +1,37 @@
+[
+  {
+    "id": "castellon",
+    "title": "Богослужіння (Кастельйон)",
+    "location": "м. Кастельйон",
+    "time": "18:00",
+    "description": "Богослужіння українською мовою кожні два тижні.",
+    "colorClass": "event-yellow",
+    "recurrence": {
+      "type": "bi-weekly-saturday"
+    }
+  },
+  {
+    "id": "torreblanca",
+    "title": "Богослужіння (Торребланка)",
+    "location": "м. Торребланка",
+    "time": "13:00",
+    "description": "Щонеділі о 13:00.",
+    "colorClass": "event-blue",
+    "recurrence": {
+      "type": "weekly",
+      "dayOfWeek": 0
+    }
+  },
+  {
+    "id": "vinaros",
+    "title": "Богослужіння (Вінарос)",
+    "location": "м. Вінарос",
+    "time": "10:00",
+    "description": "Щонеділі о 10:00.",
+    "colorClass": "event-green",
+    "recurrence": {
+      "type": "weekly",
+      "dayOfWeek": 0
+    }
+  }
+]
