@@ -3,14 +3,14 @@
 .blog-hero {
     text-align: center;
     padding: 60px 20px;
-    background-color: var(--blue); /* Example background */
+    background-color: var(--blue);
     color: white;
 }
 
 .blog-hero .title {
     font-size: 3em;
     margin-bottom: 15px;
-    color: var(--white); /* Ensure title color is white */
+    color: var(--white);
 }
 
 .blog-hero .paragraph-normal {
@@ -18,7 +18,6 @@
     margin: 0 auto;
 }
 
-/* High contrast / White text modes for hero section */
 body.high-contrast .blog-hero,
 body.white-text-mode .blog-hero {
     background-color: #000 !important;
@@ -26,9 +25,8 @@ body.white-text-mode .blog-hero {
 }
 body.high-contrast .blog-hero .title,
 body.white-text-mode .blog-hero .title {
-    color: #BDF24B !important; /* Example high contrast color */
+    color: #BDF24B !important;
 }
-
 
 .blog-posts-section {
     padding: 40px 20px;
@@ -38,18 +36,21 @@ body.white-text-mode .blog-hero .title {
 
 .blog-post {
     background-color: #fff;
+    margin: auto;
     border-radius: 10px;
+    max-width: 1200px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     margin-bottom: 40px;
     padding: 30px;
-    overflow: hidden; /* Ensure carousel doesn't spill out */
+    overflow: hidden;
     text-align: center;
 }
 
 .blog-post h2 {
-    color: var(--blue); /* Example color */
+    color: var(--blue);
     margin-bottom: 15px;
     font-size: 2em;
+    text-decoration: none;
 }
 
 .blog-post .post-date {
@@ -59,7 +60,7 @@ body.white-text-mode .blog-hero .title {
 }
 
 .blog-post .post-content {
-    text-align: left; /* Align post content text to left */
+    text-align: left;
     line-height: 1.6;
     margin-bottom: 20px;
     color: var(--dark-text);
@@ -69,23 +70,22 @@ body.white-text-mode .blog-hero .title {
     margin-bottom: 1em;
 }
 
-/* --- Carousel specific styles (adapted from your awards section) --- */
 .post-carousel {
     position: relative;
     width: 100%;
     overflow: hidden;
     mask: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
     -webkit-mask: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-    margin-top: 30px; /* Space between text and carousel */
+    margin-top: 30px;
 }
 
 .carousel-track {
     display: flex;
-    width: max-content; /* Important for horizontal scroll/animation */
-    gap: 1.5rem; /* Smaller gap for blog posts */
-    animation: infiniteSlide 30s linear infinite; /* Adjusted animation speed */
+    width: max-content;
+    gap: 1.5rem;
+    animation: infiniteSlide 30s linear infinite;
     will-change: transform;
-    padding: 10px 0; /* Add some vertical padding for images */
+    padding: 10px 0;
 }
 
 .carousel-track:hover {
@@ -97,38 +97,35 @@ body.white-text-mode .blog-hero .title {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: clamp(150px, 20vw, 250px); /* Adjust height for blog post images */
-    width: clamp(200px, 30vw, 350px); /* Set a width as well */
+    height: clamp(150px, 20vw, 250px);
+    width: clamp(200px, 30vw, 350px);
     overflow: hidden;
-    border-radius: 8px; /* Slightly rounded corners for images */
+    border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the area, possibly cropping */
+    object-fit: cover;
     display: block;
 }
 
-/* High contrast / White text modes for carousel images */
 body.high-contrast .carousel-item img,
 body.white-text-mode .carousel-item img {
-    filter: grayscale(100%) brightness(150%) contrast(150%); /* Adjust for high contrast */
+    filter: grayscale(100%) brightness(150%) contrast(150%);
 }
 
-/* Keyframes for the infinite slide animation */
 @keyframes infiniteSlide {
     0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Slides by half the track width */
+    100% { transform: translateX(-50%); }
 }
 
-/* Load More Button */
 .load-more-button {
     display: block;
     margin: 40px auto 20px auto;
     padding: 12px 25px;
-    background-color: var(--yellow); /* Example button color */
+    background-color: var(--yellow);
     color: var(--dark-text);
     border: none;
     border-radius: 8px;
@@ -138,7 +135,7 @@ body.white-text-mode .carousel-item img {
 }
 
 .load-more-button:hover {
-    background-color: #e6c200; /* Slightly darker yellow on hover */
+    background-color: #e6c200;
     transform: translateY(-2px);
 }
 
@@ -149,7 +146,39 @@ body.white-text-mode .carousel-item img {
     transform: none;
 }
 
-/* Responsive adjustments */
+.back-to-blog-button {
+    margin: 1rem;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 12px 25px;
+    background-color: var(--color-primary, #007bff);
+    color: var(--color-white, #ffffff);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.back-to-blog-button:hover {
+    background-color: var(--color-primary-dark, #0056b3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-blog-button:active {
+    background-color: var(--color-primary-darker, #004085);
+    transform: translateY(0);
+}
+
+.back-to-blog-button::before {
+    content: '\2190';
+    margin-right: 8px;
+}
+
 @media (max-width: 768px) {
     .blog-hero {
         padding: 40px 15px;
@@ -191,7 +220,30 @@ body.white-text-mode .carousel-item img {
         font-size: 1.5em;
     }
     .carousel-item {
-        height: 120px; /* Fixed height for very small screens */
-        width: 180px; /* Fixed width */
+        height: 120px;
+        width: 180px;
     }
+}
+
+.post-carousel.static-images .carousel-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 1.5rem;
+    mask: none;
+    -webkit-mask: none;
+}
+
+.post-carousel.static-images .carousel-item {
+    flex: 0 0 auto;
+}
+
+.post-carousel.static-images .carousel-track:has(.carousel-item:only-child) .carousel-item {
+    max-width: 80%;
+    height: auto;
+}
+
+.blog-post .post-carousel {
+    display: block;
 }
