@@ -46,16 +46,15 @@ function displayPostsList() {
         postElement.innerHTML = `
             <h2>${post.title}</h2>
             <p class="post-date">${new Date(post.date).toLocaleDateString('uk-UA', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-            <div class="post-content">${post.content.substring(0, 150)}...</div>
+            <div class="post-content">${post.content}</div>
             <div class="post-carousel">
-                <div class="carousel-track" id="carouselTrackList-${post.id}">
+                <div class="carousel-track" id="carouselTrack-${post.id}">
                 </div>
             </div>
-            <a href="post.html?postId=${post.id}" class="read-more-button">Читати далі</a>
         `;
         fragment.appendChild(postElement);
 
-        const carouselTrack = postElement.querySelector(`#carouselTrackList-${post.id}`);
+        const carouselTrack = postElement.querySelector(`#carouselTrack-${post.id}`);
         const carouselContainer = carouselTrack.parentElement;
 
         if (post.images && post.images.length > 0) {
@@ -68,10 +67,7 @@ function displayPostsList() {
                     carouselTrack.appendChild(carouselItem);
                 });
             } else {
-                // For carousel, you might need to duplicate images if your CSS animation requires it
-                // For a simple scrollable carousel, duplicating might not be necessary
-                // I'm sticking to the original logic you had for carousel duplication.
-                const allCarouselImages = [...post.images, ...post.images]; // Duplicate for continuous loop if needed by CSS
+                const allCarouselImages = [...post.images, ...post.images];
                 allCarouselImages.forEach(imageSrc => {
                     const carouselItem = document.createElement('div');
                     carouselItem.classList.add('carousel-item');
@@ -114,102 +110,6 @@ function displaySinglePost() {
         return;
     }
 
-    // --- Dynamic Meta Tag Generation ---
-    const head = document.head;
-
-    // Clear existing dynamic meta tags if any (optional, but good for robust handling)
-    document.querySelectorAll('meta[data-dynamic], title[data-dynamic]').forEach(el => el.remove());
-
-    // Title Tag
-    const titleTag = document.querySelector('title');
-    if (titleTag) {
-        titleTag.textContent = post.title;
-        titleTag.setAttribute('data-dynamic', 'true');
-    } else {
-        const newTitleTag = document.createElement('title');
-        newTitleTag.textContent = post.title;
-        newTitleTag.setAttribute('data-dynamic', 'true');
-        head.appendChild(newTitleTag);
-    }
-
-    // Common Meta Tags
-    const metaDescription = document.createElement('meta');
-    metaDescription.name = 'description';
-    metaDescription.content = post.description || post.content.substring(0, 160); // Use a dedicated description or part of content
-    metaDescription.setAttribute('data-dynamic', 'true');
-    head.appendChild(metaDescription);
-
-    // Open Graph (Facebook) Meta Tags
-    const ogUrl = document.createElement('meta');
-    ogUrl.property = 'og:url';
-    ogUrl.content = window.location.href; // Current URL of the post
-    ogUrl.setAttribute('data-dynamic', 'true');
-    head.appendChild(ogUrl);
-
-    const ogType = document.createElement('meta');
-    ogType.property = 'og:type';
-    ogType.content = 'article'; // Change to 'article' for blog posts
-    ogType.setAttribute('data-dynamic', 'true');
-    head.appendChild(ogType);
-
-    const ogTitle = document.createElement('meta');
-    ogTitle.property = 'og:title';
-    ogTitle.content = post.title;
-    ogTitle.setAttribute('data-dynamic', 'true');
-    head.appendChild(ogTitle);
-
-    const ogDescription = document.createElement('meta');
-    ogDescription.property = 'og:description';
-    ogDescription.content = post.description || post.content.substring(0, 160);
-    ogDescription.setAttribute('data-dynamic', 'true');
-    head.appendChild(ogDescription);
-
-    const ogImage = document.createElement('meta');
-    ogImage.property = 'og:image';
-    // Use the first image from the post or a default if none
-    ogImage.content = post.images && post.images.length > 0 ? new URL(post.images[0], window.location.origin).href : new URL('../../img/logo.webp', window.location.origin).href; // Ensure absolute URL for social sharing
-    ogImage.setAttribute('data-dynamic', 'true');
-    head.appendChild(ogImage);
-
-    // Twitter Meta Tags
-    const twitterCard = document.createElement('meta');
-    twitterCard.name = 'twitter:card';
-    twitterCard.content = 'summary_large_image';
-    twitterCard.setAttribute('data-dynamic', 'true');
-    head.appendChild(twitterCard);
-
-    const twitterDomain = document.createElement('meta');
-    twitterDomain.property = 'twitter:domain';
-    twitterDomain.content = 'igcu-castellon-vinaros-torreblanca.com'; // Your domain
-    twitterDomain.setAttribute('data-dynamic', 'true');
-    head.appendChild(twitterDomain);
-
-    const twitterUrl = document.createElement('meta');
-    twitterUrl.property = 'twitter:url';
-    twitterUrl.content = window.location.href;
-    twitterUrl.setAttribute('data-dynamic', 'true');
-    head.appendChild(twitterUrl);
-
-    const twitterTitle = document.createElement('meta');
-    twitterTitle.name = 'twitter:title';
-    twitterTitle.content = post.title;
-    twitterTitle.setAttribute('data-dynamic', 'true');
-    head.appendChild(twitterTitle);
-
-    const twitterDescription = document.createElement('meta');
-    twitterDescription.name = 'twitter:description';
-    twitterDescription.content = post.description || post.content.substring(0, 160);
-    twitterDescription.setAttribute('data-dynamic', 'true');
-    head.appendChild(twitterDescription);
-
-    const twitterImage = document.createElement('meta');
-    twitterImage.name = 'twitter:image';
-    twitterImage.content = post.images && post.images.length > 0 ? new URL(post.images[0], window.location.origin).href : new URL('../../img/logo.webp', window.location.origin).href; // Ensure absolute URL for social sharing
-    twitterImage.setAttribute('data-dynamic', 'true');
-    head.appendChild(twitterImage);
-    // --- End Dynamic Meta Tag Generation ---
-
-
     const postElement = document.createElement('article');
     postElement.classList.add('blog-post', 'single-view');
     postElement.innerHTML = `
@@ -217,13 +117,13 @@ function displaySinglePost() {
         <p class="post-date">${new Date(post.date).toLocaleDateString('uk-UA', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
         <div class="post-content">${post.content}</div>
         <div class="post-carousel">
-            <div class="carousel-track" id="carouselTrackSingle-${post.id}">
+            <div class="carousel-track" id="carouselTrack-${post.id}">
             </div>
         </div>
     `;
     singlePostContainer.appendChild(postElement);
 
-    const carouselTrack = postElement.querySelector(`#carouselTrackSingle-${post.id}`);
+    const carouselTrack = postElement.querySelector(`#carouselTrack-${post.id}`);
     const carouselContainer = carouselTrack.parentElement;
 
     if (post.images && post.images.length > 0) {
@@ -236,10 +136,7 @@ function displaySinglePost() {
                 carouselTrack.appendChild(carouselItem);
             });
         } else {
-            // For carousel, you might need to duplicate images if your CSS animation requires it
-            // I'm sticking to the original logic you had for carousel duplication.
-            const allCarouselImages = [...post.images, ...post.images]; // Duplicate for continuous loop if needed by CSS
-            allCarouselImages.forEach(imageSrc => {
+            post.images.forEach(imageSrc => {
                 const carouselItem = document.createElement('div');
                 carouselItem.classList.add('carousel-item');
                 carouselItem.innerHTML = `<img src="${imageSrc}" alt="${post.title} image">`;
