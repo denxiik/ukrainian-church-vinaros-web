@@ -5,7 +5,7 @@ const path = require('path');
 const config = {
     postsDataPath: path.join(__dirname, 'data', 'blog', 'posts.json'),
     templatePath: path.join(__dirname, '/ukr/blog', 'post-template.html'),
-    outputDir: path.join(__dirname, '/ukr/blog', 'posts'), // A new directory to store generated post files
+    outputDir: path.join(__dirname, '/ukr/blog', ''), // A new directory to store generated post files
     baseUrl: 'https://igcu-castellon-vinaros-torreblanca.com', // Your website's base URL
     defaultImage: '/img/logo.webp' // A default fallback image
 };
