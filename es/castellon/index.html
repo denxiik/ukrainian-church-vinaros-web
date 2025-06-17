@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Castellón</title>
+    <meta name="description" content="Castellón">
+
+    <meta property="og:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Iglesia">
+    <meta property="og:description" content="Castellón">
+    <meta property="og:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/castellon-inside.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="igcu-castellon-vinaros-torreblanca.com">
+    <meta property="twitter:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
+    <meta name="twitter:title" content="Iglesia">
+    <meta name="twitter:description" content="Castellón">
+    <meta name="twitter:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/castellon-inside.webp">
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castellón</title>
+    <link rel="icon" href="../../img/logo.webp">
+
+    <link rel="stylesheet" href="../../css/locality.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script src="../../script/script.js"></script>
+
+    <link rel="alternate" hreflang="en" href="https://nasha-tserkva/en/" />
+    <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/" />
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCLS8DS737"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PCLS8DS737');
+</script>
+
+<header id="header-placeholder"></header>
+
+<body>
+
+    <div class="locality-container">
+        <img src="../../img/castellon-inside.webp" alt="Parroquia Ucraniana en Castellón">
+        <h3>
+            Castellón
+        </h3>
+
+        <h4>
+            Parroquia Ucraniana en Castellón
+        </h4>
+
+        <h5>
+            Dirección: Calle Alloza, 143, 12001 Castellón, España
+        </h5>
+
+        <p class="paragraph-normal">
+            La parroquia ucraniana en la ciudad de Castellón se encuentra en la etapa de su nacimiento, formando gradualmente una comunidad espiritual para los fieles del pueblo ucraniano.
+            <br> <br>
+            En 2024, la parroquia reanudó su existencia después de un largo receso. La <strong>Primera Divina Liturgia</strong> en la comunidad restaurada fue celebrada el 16 de noviembre de 2024. La parroquia de ucranianos en Castellón funciona con la bendición del obispo de Segorbe-Castellón, Su Excelencia Casimiro López Llorente.
+            <br> <br>
+            Los servicios se llevan a cabo en ucraniano <strong>cada dos semanas</strong>, el primer, tercer y quinto sábado del mes a las 18:00. El capellán de la parroquia es el Padre Yuriy Shabanov, quien acompaña a la comunidad en la etapa inicial de su formación, promoviendo el desarrollo de la vida de oración y eclesiástica.
+            <br> <br>
+            ¡Invitamos sinceramente a todos los ucranianos a unirse a nuestra comunidad!
+            Que este lugar se convierta en su hogar espiritual, donde juntos podamos crecer en la fe, la oración y el apoyo mutuo.
+        </p>
+        <hr class="separator">
+    </div>
+</body>
+
+<footer id="footer-placeholder"></footer>
+
+<script>
+    // Cargar con la página
+    document.addEventListener('DOMContentLoaded', function () {
+        // Cargar primero todos los fragmentos HTML
+        const headerPromise = loadHTML('../header/index.html', 'header-placeholder');
+        const footerPromise = loadHTML('../footer/index.html', 'footer-placeholder');
+
+        Promise.all([headerPromise, footerPromise])
+            .then(() => {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navBar = document.querySelector('.nav-bar');
+                const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
+
+                if (menuToggle && navBar) {
+                    menuToggle.addEventListener('click', function () {
+                        navBar.classList.toggle('active');
+
+                        // Cerrar todos los desplegables cuando se alterna el menú principal
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    });
+                } else {
+                    console.warn("No se encontró el botón de alternancia del menú o la barra de navegación. Revisa tu estructura HTML.");
+                }
+
+                // Añadir un listener de clic a cada desplegable para la vista móvil
+                dropdowns.forEach(dropdown => {
+                    const dropdownLink = dropdown.querySelector('a');
+                    if (dropdownLink) {
+                        dropdownLink.addEventListener('click', function (event) {
+                            // Comprobar si estamos en una pantalla pequeña
+                            if (window.innerWidth <= 1080) {
+                                event.preventDefault();
+                                dropdown.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+
+                initializeLanguageOptions();
+
+            })
+            .catch(error => {
+                console.error('No se pudo cargar uno o más fragmentos HTML:', error);
+            });
+
+
+    });
+
+
+</script>
+
+</html>

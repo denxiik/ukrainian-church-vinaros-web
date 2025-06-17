@@ -1,29 +1,26 @@
 <!DOCTYPE html>
-<html lang="ukr">
+<html lang="es">
 
 <head>
-    <!-- HTML Meta Tags -->
-    <title>Розклад</title>
-    <meta name="description" content="Розклад">
+    <title>Horario</title>
+    <meta name="description" content="Horario">
 
-    <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Церква">
-    <meta property="og:description" content="Розклад">
+    <meta property="og:title" content="Iglesia">
+    <meta property="og:description" content="Horario">
     <meta property="og:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/all-together-outside.webp">
 
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="igcu-castellon-vinaros-torreblanca.com">
     <meta property="twitter:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
-    <meta name="twitter:title" content="Церква">
-    <meta name="twitter:description" content="Розклад">
+    <meta name="twitter:title" content="Iglesia">
+    <meta name="twitter:description" content="Horario">
     <meta name="twitter:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/all-together-outside.webp">
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Розклад</title>
+    <title>Horario</title>
     <link rel="icon" href="../../img/logo.webp">
 
     <link rel="stylesheet" href="../../css/calendar.css" />
@@ -36,14 +33,13 @@
     <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/" />
 </head>
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCLS8DS737"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-PCLS8DS737');
+    gtag('config', 'G-PCLS8DS737');
 </script>
 
 <header id="header-placeholder"></header>
@@ -51,10 +47,9 @@
 <body>
     <main class="calendar-page-content">
         <section class="calendar-intro">
-            <h1 class="calendar-title">Розклад Богослужінь та Подій</h1>
+            <h1 class="calendar-title">Horario de Servicios y Eventos</h1>
             <p class="calendar-description paragraph-normal">
-                Приєдпуйтесь до нас на спільну молитву! Нижче ви знайдете актуальний розклад богослужінь для наших
-                парафій.
+                ¡Únete a nosotros para la oración en común! A continuación encontrarás el horario actual de los servicios para nuestras parroquias.
             </p>
         </section>
 
@@ -64,9 +59,9 @@
                     <i class="fas fa-church"></i>
                 </div>
                 <div class="event-details">
-                    <h3 class="event-location">м. Кастельйон</h3>
+                    <h3 class="event-location">Castellón</h3>
                     <p class="event-time paragraph-normal">
-                        Kожні два тижні — субота о 18:00.
+                        Cada dos semanas — sábado a las 18:00.
                     </p>
                 </div>
             </div>
@@ -76,9 +71,9 @@
                     <i class="fas fa-church"></i>
                 </div>
                 <div class="event-details">
-                    <h3 class="event-location">м. Торребланка</h3>
+                    <h3 class="event-location">Torreblanca</h3>
                     <p class="event-time paragraph-normal">
-                        Щонеділі о 13:00.
+                        Todos los domingos a las 13:00.
                     </p>
                 </div>
             </div>
@@ -88,19 +83,18 @@
                     <i class="fas fa-church"></i>
                 </div>
                 <div class="event-details">
-                    <h3 class="event-location">м. Вінарос</h3>
+                    <h3 class="event-location">Vinaròs</h3>
                     <p class="event-time paragraph-normal">
-                        Щонеділі о 10:00.
+                        Todos los domingos a las 10:00.
                     </p>
                 </div>
             </div>
         </section>
 
         <section class="custom-calendar-section">
-            <h2 class="calendar-section-title">Календар подій</h2>
+            <h2 class="calendar-section-title">Calendario de Eventos</h2>
             <p class="calendar-section-description paragraph-normal">
-                Ви можете переглянути повний розклад богослужінь та інших парафіяльних подій на інтерактивному
-                календарі.
+                Puedes ver el horario completo de los servicios y otros eventos parroquiales en el calendario interactivo.
             </p>
             <div id='custom-calendar-display'>
                 <div class="calendar-header">
@@ -109,24 +103,24 @@
                     <button id="nextMonth">&gt;</button>
                 </div>
                 <div class="calendar-weekdays">
-                    <div>Нд</div>
-                    <div>Пн</div>
-                    <div>Вт</div>
-                    <div>Ср</div>
-                    <div>Чт</div>
-                    <div>Пт</div>
-                    <div>Сб</div>
+                    <div>Dom</div>
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mié</div>
+                    <div>Jue</div>
+                    <div>Vie</div>
+                    <div>Sáb</div>
                 </div>
                 <div id="calendar-days" class="calendar-days"></div>
             </div>
         </section>
 
         <div class="calendar-legend">
-            <h3>Кольори подій:</h3>
+            <h3>Colores de eventos:</h3>
             <ul>
-                <li><span class="legend-color green"></span> Вінарос</li>
-                <li><span class="legend-color blue"></span> Торребланка</li>
-                <li><span class="legend-color yellow"></span> Кастельйон</li>
+                <li><span class="legend-color green"></span> Vinaròs</li>
+                <li><span class="legend-color blue"></span> Torreblanca</li>
+                <li><span class="legend-color yellow"></span> Castellón</li>
             </ul>
         </div>
 
@@ -136,7 +130,7 @@
                 <h3 id="modalDate"></h3>
                 <div id="modalEventsList">
                 </div>
-                <p id="noEventsMessage" class="paragraph-normal" style="display: none;">На цей день подій немає.</p>
+                <p id="noEventsMessage" class="paragraph-normal" style="display: none;">No hay eventos para este día.</p>
             </div>
         </div>
 
@@ -146,19 +140,19 @@
 <footer id="footer-placeholder"></footer>
 
 <script>
-    // Load with page
+    // Cargar con la página
     document.addEventListener('DOMContentLoaded', function () {
-        console.log("DOM Content Loaded event fired in index.html.");
+        console.log("Evento DOM Content Loaded disparado en index.html.");
 
-        // Load all HTML fragments first
+        // Cargar primero todos los fragmentos HTML
         const headerPromise = loadHTML('../header/index.html', 'header-placeholder');
         const footerPromise = loadHTML('../footer/index.html', 'footer-placeholder');
 
         Promise.all([headerPromise, footerPromise])
             .then(() => {
-                console.log("Header and footer HTML fragments loaded successfully.");
+                console.log("Fragmentos HTML de encabezado y pie de página cargados exitosamente.");
 
-                // Menu toggle and dropdown logic (from your script.js)
+                // Lógica de alternancia del menú y desplegable (de tu script.js)
                 const menuToggle = document.querySelector('.menu-toggle');
                 const navBar = document.querySelector('.nav-bar');
                 const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
@@ -171,7 +165,7 @@
                         });
                     });
                 } else {
-                    console.warn("Menu toggle or nav bar not found. Check your HTML structure.");
+                    console.warn("No se encontró el botón de alternancia del menú o la barra de navegación. Revisa tu estructura HTML.");
                 }
 
                 dropdowns.forEach(dropdown => {
@@ -185,13 +179,14 @@
                         });
                     }
                 });
-
-                initCustomCalendar();
                 
                 initializeLanguageOptions();
+
+                console.log("Intentando inicializar el calendario personalizado...");
+                initCustomCalendar();
             })
             .catch(error => {
-                console.error('One or more HTML fragments failed to load:', error);
+                console.error('Uno o más fragmentos HTML no se pudieron cargar:', error);
             });
     });
 </script>

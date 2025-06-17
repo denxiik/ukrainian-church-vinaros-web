@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html lang="ukr">
+<html lang="es">
 
 <head>
-    <!-- HTML Meta Tags -->
-    <title>Новини</title>
-    <meta name="description" content="Новини">
+    <title>Noticias</title>
+    <meta name="description" content="Noticias">
 
-    <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Церква">
-    <meta property="og:description" content="Новини">
+    <meta property="og:title" content="Iglesia">
+    <meta property="og:description" content="Noticias">
     <meta property="og:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/all-together-outside.webp">
 
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="igcu-castellon-vinaros-torreblanca.com">
     <meta property="twitter:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
-    <meta name="twitter:title" content="Церква">
-    <meta name="twitter:description" content="Новини">
+    <meta name="twitter:title" content="Iglesia">
+    <meta name="twitter:description" content="Noticias">
     <meta name="twitter:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/all-together-outside.webp">
 
     <meta charset="UTF-8" />
@@ -33,14 +30,13 @@
     <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/" />
 </head>
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCLS8DS737"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-PCLS8DS737');
+    gtag('config', 'G-PCLS8DS737');
 </script>
 
 <header id="header-placeholder"></header>
@@ -49,36 +45,36 @@
 
     <main>
         <section class="blog-hero">
-            <h1 class="title">Наші Новини та Події</h1>
-            <p class="paragraph-normal">Залишайтеся в курсі останніх подій та оголошень життя нашої парафії.</p>
+            <h1 class="title">Nuestras Noticias y Eventos</h1>
+            <p class="paragraph-normal">Mantente al tanto de los últimos acontecimientos y anuncios de la vida de nuestra parroquia.</p>
         </section>
 
         <section class="blog-posts-section">
             <div id="blogPostsContainer" class="blog-posts-container">
-                </div>
-            <button id="loadMorePosts" class="load-more-button">Завантажити більше</button>
+            </div>
+            <button id="loadMorePosts" class="load-more-button">Cargar más</button>
         </section>
     </main>
 
-
-    <script src="../../script/blog-logic.js"></script> </body>
+    <script src="../../script/blog-logic.js"></script> 
+</body>
 
 <footer id="footer-placeholder"></footer>
 
 <script>
-    // Load with page
+    // Cargar con la página
     document.addEventListener('DOMContentLoaded', function () {
-        console.log("DOM Content Loaded event fired in index.html.");
+        console.log("Evento 'DOMContentLoaded' disparado en index.html.");
 
-        // Load all HTML fragments first
+        // Cargar primero todos los fragmentos HTML
         const headerPromise = loadHTML('../header/index.html', 'header-placeholder');
         const footerPromise = loadHTML('../footer/index.html', 'footer-placeholder');
 
         Promise.all([headerPromise, footerPromise])
             .then(() => {
-                console.log("Header and footer HTML fragments loaded successfully.");
+                console.log("Fragmentos HTML de encabezado y pie de página cargados exitosamente.");
 
-                // Menu toggle and dropdown logic (from your script.js)
+                // Lógica de alternancia del menú y desplegable (de tu script.js)
                 const menuToggle = document.querySelector('.menu-toggle');
                 const navBar = document.querySelector('.nav-bar');
                 const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
@@ -91,7 +87,7 @@
                         });
                     });
                 } else {
-                    console.warn("Menu toggle or nav bar not found. Check your HTML structure.");
+                    console.warn("No se encontró el botón de alternancia del menú o la barra de navegación. Revisa tu estructura HTML.");
                 }
 
                 dropdowns.forEach(dropdown => {
@@ -107,10 +103,10 @@
                 });
 
                 initializeLanguageOptions();
-
+                
             })
             .catch(error => {
-                console.error('One or more HTML fragments failed to load:', error);
+                console.error('Uno o más fragmentos HTML no se pudieron cargar:', error);
             });
     });
 </script>

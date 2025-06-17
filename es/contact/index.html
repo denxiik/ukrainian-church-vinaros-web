@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html lang="ukr">
+<html lang="es">
 
 <head>
-    <!-- HTML Meta Tags -->
-    <title>Контакти</title>
-    <meta name="description" content="Контакти">
+    <title>Contacto</title>
+    <meta name="description" content="Contacto">
 
-    <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Церква">
-    <meta property="og:description" content="Контакти">
+    <meta property="og:title" content="Iglesia">
+    <meta property="og:description" content="Contacto">
     <meta property="og:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/all-together-outside.webp">
 
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="igcu-castellon-vinaros-torreblanca.com">
     <meta property="twitter:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
-    <meta name="twitter:title" content="Церква">
-    <meta name="twitter:description" content="Контакти">
+    <meta name="twitter:title" content="Iglesia">
+    <meta name="twitter:description" content="Contacto">
     <meta name="twitter:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/all-together-outside.webp">
-
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,14 +32,13 @@
     <link rel="alternate" hreflang="es" href="https://asopmr.org/es/contact.html" />
 </head>
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCLS8DS737"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-PCLS8DS737');
+    gtag('config', 'G-PCLS8DS737');
 </script>
 
 <header id="header-placeholder"></header>
@@ -51,48 +46,30 @@
 <body>
     <section class="contact">
         <div class="contact-info">
-            <p class="paragraph-bold title">Зв'яжіться з нами.</p>
-            <h3>Раді бачити, що ви дійшли сюди!</h3>
+            <p class="paragraph-bold title">Contáctanos.</p>
+            <h3>¡Nos alegra verte aquí!</h3>
 
             <div class="address">
-                <p class="paragraph-bold">Адреси:</p>
+                <p class="paragraph-bold">Direcciones:</p>
                 <p class="paragraph-normal">Plaça de Sant Valent, 18, 12500 Vinaròs</p>
                 <p class="paragraph-normal">Plaza de la Iglesia, 12596 Torreblanca</p>
                 <p class="paragraph-normal">Calle Alloza, 143, 12001 Castellón</p>
             </div>
 
-            <p class="paragraph-bold">Маєте запитання?</p>
-            <p class="paragraph-normal">Надішліть нам листа</p>
+            <p class="paragraph-bold">¿Tienes preguntas?</p>
+            <p class="paragraph-normal">Envíanos un correo electrónico</p>
             <a href="mailto:asopmr@asopmr.org">
                 <button>
                     yuriishabanov1846@gmail.com
                 </button>
             </a>
-            <!--p class="paragraph-normal">Або заповніть форму, і ми незабаром зв'яжемося з вами!</p-->
-        </div>
+            </div>
 
-        <!--div class="contact-form-container">
-            <form class="contact-form" action="" method="POST">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Ім'я:" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Електронна пошта:" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" name="message" rows="5" placeholder="Повідомлення" required></textarea>
-                </div>
-                <div class="g-recaptcha-wrapper">
-                    <div class="g-recaptcha" data-sitekey="6LdJMlsrAAAAAF-UCCWgAE-11JA8W7qBb8A0tlMz=s"></div>
-                </div>
-                <button type="submit">Надіслати</button>
-            </form>
-        </div-->
-    </section>
+        </section>
 </body>
 
 <script>
-    // Load with page
+    // Cargar con la página
     document.addEventListener('DOMContentLoaded', function () {
         const headerPromise = loadHTML('../header/index.html', 'header-placeholder'); 
 
@@ -106,21 +83,21 @@
                     menuToggle.addEventListener('click', function () {
                         navBar.classList.toggle('active');
 
-                        // Close all dropdowns when the main menu is toggled
+                        // Cerrar todos los desplegables cuando se alterna el menú principal
                         dropdowns.forEach(dropdown => {
                             dropdown.classList.remove('active');
                         });
                     });
                 } else {
-                    console.warn("Menu toggle або панель навігації не знайдено. Перевірте структуру HTML.");
+                    console.warn("No se encontró el botón de alternancia del menú o la barra de navegación. Revisa tu estructura HTML.");
                 }
 
-                // Add click listener to each dropdown for mobile view
+                // Añadir un listener de clic a cada desplegable para la vista móvil
                 dropdowns.forEach(dropdown => {
                     const dropdownLink = dropdown.querySelector('a');
                     if (dropdownLink) {
                         dropdownLink.addEventListener('click', function (event) {
-                            // Check if we are on a small screen
+                            // Comprobar si estamos en una pantalla pequeña
                             if (window.innerWidth <= 1080) {
                                 event.preventDefault();
                                 dropdown.classList.toggle('active');
@@ -133,7 +110,7 @@
                 
             })
             .catch(error => {
-                console.error('Не вдалося завантажити один або кілька HTML-фрагментів:', error);
+                console.error('No se pudo cargar uno o más fragmentos HTML:', error);
             });
     });
 </script>

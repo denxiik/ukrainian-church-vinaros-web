@@ -2,13 +2,37 @@
 let currentMonth = new Date().getMonth();
 let currentYear = new Date().getFullYear();
 let loadedEvents = []; // To store events loaded from JSON
+let currentLanguage = 'ukr'; // Default language, will be updated by getCurrentLanguage()
 
-const monthNames = [
-    "Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень",
-    "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"
-];
-
-const dayNames = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+// Language-specific data
+const languageData = {
+    ukr: {
+        monthNames: [
+            "Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень",
+            "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"
+        ],
+        dayNames: ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+        modalDatePrefix: "Події на",
+        noEventsMessage: "Немає подій на цей день.",
+        locationLabel: "Місце",
+        timeLabel: "Час",
+        descriptionLabel: "Опис",
+        noDescriptionText: "Немає опису."
+    },
+    es: {
+        monthNames: [
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ],
+        dayNames: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+        modalDatePrefix: "Eventos para el",
+        noEventsMessage: "No hay eventos para este día.",
+        locationLabel: "Ubicación",
+        timeLabel: "Hora",
+        descriptionLabel: "Descripción",
+        noDescriptionText: "Sin descripción."
+    }
+};
 
 // References to modal elements
 let eventModal;
@@ -16,6 +40,19 @@ let modalDateEl;
 let modalEventsListEl;
 let noEventsMessageEl;
 let closeButton;
+
+// Function to get the current language based on URL path segments
+function getCurrentLanguage() {
+    const pathSegments = window.location.pathname.split('/').filter(segment => segment !== '');
+
+    if (pathSegments.includes('ukr')) {
+        return 'ukr';
+    } else if (pathSegments.includes('es')) {
+        return 'es';
+    }
+    return 'ukr'; // Default to Ukrainian if no language segment is found
+}
+
 
 // Function to initialize the custom calendar
 async function initCustomCalendar() {
@@ -40,14 +77,9 @@ async function initCustomCalendar() {
         return;
     }
 
-    // Load events from JSON file
-    try {
-        loadedEvents = await loadEventsData();
-        console.log("Events loaded:", loadedEvents);
-    } catch (error) {
-        console.error("Failed to load events data:", error);
-        // Optionally display a message to the user that events couldn't be loaded
-    }
+    // Set initial language and render based on URL path
+    currentLanguage = getCurrentLanguage();
+    await setLanguageAndRender(currentLanguage); // Initial load and render based on detected language
 
     // Add event listeners for month navigation
     prevMonthBtn.addEventListener('click', () => {
@@ -75,21 +107,44 @@ async function initCustomCalendar() {
             closeEventModal();
         }
     });
-
-    renderCalendar(); // Initial render of the calendar
 }
 
-// Function to fetch event data from JSON file
+/**
+ * Sets the current language, reloads events, and re-renders the calendar.
+ * @param {string} lang - The language code ('ukr' or 'es').
+ */
+async function setLanguageAndRender(lang) {
+    if (!languageData[lang]) {
+        console.error(`Unsupported language: ${lang}`);
+        return;
+    }
+    currentLanguage = lang; // Update the global currentLanguage
+    console.log(`Setting language to: ${currentLanguage}`);
+
+    try {
+        loadedEvents = await loadEventsData();
+        console.log("Events loaded for current language:", loadedEvents);
+        renderCalendar();
+    } catch (error) {
+        console.error("Failed to load events data for language:", currentLanguage, error);
+        loadedEvents = []; // Clear events on error
+        renderCalendar(); // Render calendar even if events fail to load
+    }
+}
+
+
+// Function to fetch event data from JSON file based on current language
 async function loadEventsData() {
     try {
-        const response = await fetch('../../data/events/events.json');
+        const eventsPath = `../../data/${currentLanguage}/events/events.json`;
+        const response = await fetch(eventsPath);
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`HTTP error! status: ${response.status} from ${eventsPath}`);
         }
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error("Error fetching events.json:", error);
+        console.error("Error fetching events.json for language", currentLanguage, ":", error);
         return []; // Return empty array on error
     }
 }
@@ -100,7 +155,22 @@ function renderCalendar() {
     const currentMonthYearEl = document.getElementById('currentMonthYear');
     calendarDaysEl.innerHTML = ''; // Clear previous days
 
+    const { monthNames, dayNames } = languageData[currentLanguage];
+
     currentMonthYearEl.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+
+    // Display day names (e.g., Нд, Пн for ukr or Dom, Lun for es)
+    const calendarWeekDaysEl = document.getElementById('calendar-weekdays');
+    if (calendarWeekDaysEl) { // Ensure this element exists in your HTML
+        calendarWeekDaysEl.innerHTML = '';
+        dayNames.forEach(dayName => {
+            const dayNameEl = document.createElement('div');
+            dayNameEl.classList.add('weekday-name');
+            dayNameEl.textContent = dayName;
+            calendarWeekDaysEl.appendChild(dayNameEl);
+        });
+    }
+
 
     // Get the first day of the month (0 for Sunday, 6 for Saturday)
     const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
@@ -140,7 +210,8 @@ function renderCalendar() {
                 addEvent = true;
             } else if (event.recurrence.type === 'bi-weekly-saturday' && dayOfWeek === 6) { // It's a Saturday
                 const weekOfMonth = Math.floor((day - 1) / 7) + 1;
-                if (weekOfMonth === 1 || weekOfMonth === 3 || weekOfMonth === 5) {
+                // Assuming 1st, 3rd, 5th Saturdays
+                if (weekOfMonth % 2 !== 0) {
                     addEvent = true;
                 }
             }
@@ -180,10 +251,13 @@ function renderCalendar() {
 
 // Function to open the event details modal
 function openEventModal(date, events) {
-    modalDateEl.textContent = `Події на ${date.toLocaleDateString('uk-UA', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`;
+    const { modalDatePrefix, noEventsMessage, locationLabel, timeLabel, descriptionLabel, noDescriptionText } = languageData[currentLanguage];
+
+    modalDateEl.textContent = `${modalDatePrefix} ${date.toLocaleDateString(currentLanguage === 'ukr' ? 'uk-UA' : 'es-ES', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`;
     modalEventsListEl.innerHTML = ''; // Clear previous events
 
     if (events.length === 0) {
+        noEventsMessageEl.textContent = noEventsMessage;
         noEventsMessageEl.style.display = 'block';
     } else {
         noEventsMessageEl.style.display = 'none';
@@ -195,9 +269,9 @@ function openEventModal(date, events) {
             }
             eventItem.innerHTML = `
                 <h4>${event.title}</h4>
-                <p><strong>Місце:</strong> ${event.location}</p>
-                <p><strong>Час:</strong> ${event.time}</p>
-                <p><strong>Опис:</strong> ${event.description || 'Немає опису.'}</p>
+                <p><strong>${locationLabel}:</strong> ${event.location}</p>
+                <p><strong>${timeLabel}:</strong> ${event.time}</p>
+                <p><strong>${descriptionLabel}:</strong> ${event.description || noDescriptionText}</p>
             `;
             modalEventsListEl.appendChild(eventItem);
         });

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "castellon",
+    "title": "Servicio Divino (Castellón)",
+    "location": "Castellón",
+    "time": "18:00",
+    "description": "Servicio Divino en ucraniano cada dos semanas.",
+    "colorClass": "event-yellow",
+    "recurrence": {
+      "type": "bi-weekly-saturday"
+    }
+  },
+  {
+    "id": "torreblanca",
+    "title": "Servicio Divino (Torreblanca)",
+    "location": "Torreblanca",
+    "time": "13:00",
+    "description": "Cada domingo a las 13:00.",
+    "colorClass": "event-blue",
+    "recurrence": {
+      "type": "weekly",
+      "dayOfWeek": 0
+    }
+  },
+  {
+    "id": "vinaros",
+    "title": "Servicio Divino (Vinaròs)",
+    "location": "Vinaròs",
+    "time": "10:00",
+    "description": "Cada domingo a las 10:00.",
+    "colorClass": "event-green",
+    "recurrence": {
+      "type": "weekly",
+      "dayOfWeek": 0
+    }
+  }
+]
