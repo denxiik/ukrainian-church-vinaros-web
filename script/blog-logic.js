@@ -6,17 +6,21 @@ let allPosts = [];
 let postsPerPage = 5;
 let currentIndex = 0;
 
-const isSinglePostPage = window.location.pathname.includes('/post.html');
+// This check helps determine if we are on the main blog list or a single post page.
+const isSinglePostPage = window.location.pathname.includes('/posts/');
 
 async function fetchPosts() {
     try {
+        // Fetch the JSON data containing all blog posts.
         const response = await fetch('../../data/blog/posts.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         allPosts = await response.json();
+        // Sort posts by date, newest first.
         allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
+        // Route the logic based on the page type.
         if (isSinglePostPage) {
             displaySinglePost();
         } else {
@@ -25,6 +29,7 @@ async function fetchPosts() {
 
     } catch (error) {
         console.error("Error fetching blog posts:", error);
+        // Display user-friendly error messages on the page.
         if (blogPostsContainer) {
             blogPostsContainer.innerHTML = '<p>Не вдалося завантажити дописи. Спробуйте пізніше.</p>';
             if (loadMoreButton) loadMoreButton.style.display = 'none';
@@ -43,6 +48,8 @@ function displayPostsList() {
     postsToLoad.forEach(post => {
         const postElement = document.createElement('article');
         postElement.classList.add('blog-post');
+
+        // UPDATED: The link now points directly to the pre-rendered HTML file for each post.
         postElement.innerHTML = `
             <h2>${post.title}</h2>
             <p class="post-date">${new Date(post.date).toLocaleDateString('uk-UA', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
@@ -51,7 +58,7 @@ function displayPostsList() {
                 <div class="carousel-track" id="carouselTrackList-${post.id}">
                 </div>
             </div>
-            <a href="post.html?postId=${post.id}" class="read-more-button">Читати далі</a>
+            <a href="posts/${post.id}.html" class="read-more-button">Читати далі</a>
         `;
         fragment.appendChild(postElement);
 
@@ -59,26 +66,17 @@ function displayPostsList() {
         const carouselContainer = carouselTrack.parentElement;
 
         if (post.images && post.images.length > 0) {
-            if (post.images.length <= 2) {
-                carouselContainer.classList.add('static-images');
-                post.images.forEach(imageSrc => {
-                    const carouselItem = document.createElement('div');
-                    carouselItem.classList.add('carousel-item');
-                    carouselItem.innerHTML = `<img src="${imageSrc}" alt="${post.title} image">`;
-                    carouselTrack.appendChild(carouselItem);
-                });
-            } else {
-                // For carousel, you might need to duplicate images if your CSS animation requires it
-                // For a simple scrollable carousel, duplicating might not be necessary
-                // I'm sticking to the original logic you had for carousel duplication.
-                const allCarouselImages = [...post.images, ...post.images]; // Duplicate for continuous loop if needed by CSS
-                allCarouselImages.forEach(imageSrc => {
-                    const carouselItem = document.createElement('div');
-                    carouselItem.classList.add('carousel-item');
-                    carouselItem.innerHTML = `<img src="${imageSrc}" alt="${post.title} image">`;
-                    carouselTrack.appendChild(carouselItem);
-                });
-            }
+            carouselContainer.classList.toggle('static-images', post.images.length <= 2);
+            
+            // For carousels, duplicate images for a smooth continuous loop effect with CSS.
+            const imagesToDisplay = post.images.length > 2 ? [...post.images, ...post.images] : post.images;
+
+            imagesToDisplay.forEach(imageSrc => {
+                const carouselItem = document.createElement('div');
+                carouselItem.classList.add('carousel-item');
+                carouselItem.innerHTML = `<img src="${imageSrc}" alt="${post.title} image">`;
+                carouselTrack.appendChild(carouselItem);
+            });
         } else {
             carouselContainer.style.display = 'none';
         }
@@ -87,23 +85,21 @@ function displayPostsList() {
     blogPostsContainer.appendChild(fragment);
     currentIndex += postsToLoad.length;
 
+    // Show or hide the "Load More" button based on whether there are more posts to display.
     if (loadMoreButton) {
-        if (currentIndex >= allPosts.length) {
-            loadMoreButton.style.display = 'none';
-        } else {
-            loadMoreButton.style.display = 'block';
-        }
+        loadMoreButton.style.display = currentIndex >= allPosts.length ? 'none' : 'block';
     }
 }
 
 function displaySinglePost() {
     if (!singlePostContainer) return;
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const postId = urlParams.get('postId');
+    // UPDATED: Determine the post ID from the URL path, e.g., ".../posts/post1.html" -> "post1"
+    const pathParts = window.location.pathname.split('/');
+    const postId = pathParts.pop().replace('.html', '');
 
     if (!postId) {
-        singlePostContainer.innerHTML = '<p>Допис не знайдено. Будь ласка, вкажіть ID допису.</p>';
+        singlePostContainer.innerHTML = '<p>Допис не знайдено.</p>';
         return;
     }
 
@@ -114,102 +110,12 @@ function displaySinglePost() {
         return;
     }
 
-    // --- Dynamic Meta Tag Generation ---
-    const head = document.head;
+    // --- REMOVED: DYNAMIC META TAG GENERATION ---
+    // This entire section has been removed. The meta tags are now "baked in" to the HTML
+    // by the `build.js` script before deployment. This ensures that social media crawlers
+    // can see them immediately, fixing the sharing preview issue.
 
-    // Clear existing dynamic meta tags if any (optional, but good for robust handling)
-    document.querySelectorAll('meta[data-dynamic], title[data-dynamic]').forEach(el => el.remove());
-
-    // Title Tag
-    const titleTag = document.querySelector('title');
-    if (titleTag) {
-        titleTag.textContent = post.title;
-        titleTag.setAttribute('data-dynamic', 'true');
-    } else {
-        const newTitleTag = document.createElement('title');
-        newTitleTag.textContent = post.title;
-        newTitleTag.setAttribute('data-dynamic', 'true');
-        head.appendChild(newTitleTag);
-    }
-
-    // Common Meta Tags
-    const metaDescription = document.createElement('meta');
-    metaDescription.name = 'description';
-    metaDescription.content = post.description || post.content.substring(0, 160); // Use a dedicated description or part of content
-    metaDescription.setAttribute('data-dynamic', 'true');
-    head.appendChild(metaDescription);
-
-    // Open Graph (Facebook) Meta Tags
-    const ogUrl = document.createElement('meta');
-    ogUrl.property = 'og:url';
-    ogUrl.content = window.location.href; // Current URL of the post
-    ogUrl.setAttribute('data-dynamic', 'true');
-    head.appendChild(ogUrl);
-
-    const ogType = document.createElement('meta');
-    ogType.property = 'og:type';
-    ogType.content = 'article'; // Change to 'article' for blog posts
-    ogType.setAttribute('data-dynamic', 'true');
-    head.appendChild(ogType);
-
-    const ogTitle = document.createElement('meta');
-    ogTitle.property = 'og:title';
-    ogTitle.content = post.title;
-    ogTitle.setAttribute('data-dynamic', 'true');
-    head.appendChild(ogTitle);
-
-    const ogDescription = document.createElement('meta');
-    ogDescription.property = 'og:description';
-    ogDescription.content = post.description || post.content.substring(0, 160);
-    ogDescription.setAttribute('data-dynamic', 'true');
-    head.appendChild(ogDescription);
-
-    const ogImage = document.createElement('meta');
-    ogImage.property = 'og:image';
-    // Use the first image from the post or a default if none
-    ogImage.content = post.images && post.images.length > 0 ? new URL(post.images[0], window.location.origin).href : new URL('../../img/logo.webp', window.location.origin).href; // Ensure absolute URL for social sharing
-    ogImage.setAttribute('data-dynamic', 'true');
-    head.appendChild(ogImage);
-
-    // Twitter Meta Tags
-    const twitterCard = document.createElement('meta');
-    twitterCard.name = 'twitter:card';
-    twitterCard.content = 'summary_large_image';
-    twitterCard.setAttribute('data-dynamic', 'true');
-    head.appendChild(twitterCard);
-
-    const twitterDomain = document.createElement('meta');
-    twitterDomain.property = 'twitter:domain';
-    twitterDomain.content = 'igcu-castellon-vinaros-torreblanca.com'; // Your domain
-    twitterDomain.setAttribute('data-dynamic', 'true');
-    head.appendChild(twitterDomain);
-
-    const twitterUrl = document.createElement('meta');
-    twitterUrl.property = 'twitter:url';
-    twitterUrl.content = window.location.href;
-    twitterUrl.setAttribute('data-dynamic', 'true');
-    head.appendChild(twitterUrl);
-
-    const twitterTitle = document.createElement('meta');
-    twitterTitle.name = 'twitter:title';
-    twitterTitle.content = post.title;
-    twitterTitle.setAttribute('data-dynamic', 'true');
-    head.appendChild(twitterTitle);
-
-    const twitterDescription = document.createElement('meta');
-    twitterDescription.name = 'twitter:description';
-    twitterDescription.content = post.description || post.content.substring(0, 160);
-    twitterDescription.setAttribute('data-dynamic', 'true');
-    head.appendChild(twitterDescription);
-
-    const twitterImage = document.createElement('meta');
-    twitterImage.name = 'twitter:image';
-    twitterImage.content = post.images && post.images.length > 0 ? new URL(post.images[0], window.location.origin).href : new URL('../../img/logo.webp', window.location.origin).href; // Ensure absolute URL for social sharing
-    twitterImage.setAttribute('data-dynamic', 'true');
-    head.appendChild(twitterImage);
-    // --- End Dynamic Meta Tag Generation ---
-
-
+    // Create the post element to display the content.
     const postElement = document.createElement('article');
     postElement.classList.add('blog-post', 'single-view');
     postElement.innerHTML = `
@@ -227,32 +133,27 @@ function displaySinglePost() {
     const carouselContainer = carouselTrack.parentElement;
 
     if (post.images && post.images.length > 0) {
-        if (post.images.length <= 2) {
-            carouselContainer.classList.add('static-images');
-            post.images.forEach(imageSrc => {
-                const carouselItem = document.createElement('div');
-                carouselItem.classList.add('carousel-item');
-                carouselItem.innerHTML = `<img src="${imageSrc}" alt="${post.title} image">`;
-                carouselTrack.appendChild(carouselItem);
-            });
-        } else {
-            // For carousel, you might need to duplicate images if your CSS animation requires it
-            // I'm sticking to the original logic you had for carousel duplication.
-            const allCarouselImages = [...post.images, ...post.images]; // Duplicate for continuous loop if needed by CSS
-            allCarouselImages.forEach(imageSrc => {
-                const carouselItem = document.createElement('div');
-                carouselItem.classList.add('carousel-item');
-                carouselItem.innerHTML = `<img src="${imageSrc}" alt="${post.title} image">`;
-                carouselTrack.appendChild(carouselItem);
-            });
-        }
+        carouselContainer.classList.toggle('static-images', post.images.length <= 2);
+
+        // For carousels, duplicate images for a smooth continuous loop effect with CSS.
+        const imagesToDisplay = post.images.length > 2 ? [...post.images, ...post.images] : post.images;
+        
+        imagesToDisplay.forEach(imageSrc => {
+            const carouselItem = document.createElement('div');
+            carouselItem.classList.add('carousel-item');
+            // Adjust image path to be relative to the `posts` sub-directory.
+            carouselItem.innerHTML = `<img src="${imageSrc.replace('../../', '../../')}" alt="${post.title} image">`;
+            carouselTrack.appendChild(carouselItem);
+        });
     } else {
         carouselContainer.style.display = 'none';
     }
 }
 
+// Add event listener for the "Load More" button if it exists.
 if (loadMoreButton) {
     loadMoreButton.addEventListener('click', displayPostsList);
 }
 
+// Initial call to fetch posts when the script loads.
 fetchPosts();
