@@ -46,5 +46,15 @@
       "../../img/blog/post4/1.jpg",
       "../../img/blog/post4/2.jpg"
     ]
+  },
+  {
+    "id": "post5",
+    "title": "Encuentro de sacerdotes del decanato norte de la diócesis Segorbe-Castellón.",
+    "date": "2025-06-17",
+    "content": "<p>Encuentro de sacerdotes del decanato norte de la diócesis Segorbe-Castellón. Hoy, 17 de junio, tuvo lugar un encuentro de sacerdotes del decanato norte de la diócesis Segorbe-Castellón en la residencia de la parroquia de Torreblanca. Los participantes compartieron experiencias de servicio pastoral en sus comunidades y también tuvieron una comida fraterna. Durante el encuentro, el párroco Nuno y el capellán Padre Yuriy mostraron a los presentes la iglesia local y la capilla donde se celebran los servicios divinos. El Padre Yuriy también mostró los iconos locales donados por el obispo Kazymyr para la parroquia greco-católica. El encuentro transcurrió en un ambiente cálido y amistoso, contribuyendo a fortalecer la unidad espiritual y los lazos fraternos entre los sacerdotes.</p>",
+    "images": [
+      "../../img/blog/post5/1.jpg",
+      "../../img/blog/post5/2.jpg"
+    ]
   }
 ]
