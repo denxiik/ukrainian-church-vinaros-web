@@ -6,21 +6,21 @@ let allPosts = [];
 let postsPerPage = 5;
 let currentIndex = 0;
 
-// This check helps determine if we are on the main blog list or a single post page.
-const isSinglePostPage = window.location.pathname.includes('/posts/');
+// UPDATED: A more robust way to check if we are on a single post page.
+// It checks if the path is an HTML file but not the main 'index.html'.
+const isSinglePostPage = window.location.pathname.endsWith('.html') && !window.location.pathname.endsWith('/index.html');
+
 
 async function fetchPosts() {
     try {
-        // Fetch the JSON data containing all blog posts.
+        // The path to the JSON is the same from both /blog/index.html and /blog/post1.html
         const response = await fetch('../../data/blog/posts.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         allPosts = await response.json();
-        // Sort posts by date, newest first.
         allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        // Route the logic based on the page type.
         if (isSinglePostPage) {
             displaySinglePost();
         } else {
@@ -29,7 +29,6 @@ async function fetchPosts() {
 
     } catch (error) {
         console.error("Error fetching blog posts:", error);
-        // Display user-friendly error messages on the page.
         if (blogPostsContainer) {
             blogPostsContainer.innerHTML = '<p>Не вдалося завантажити дописи. Спробуйте пізніше.</p>';
             if (loadMoreButton) loadMoreButton.style.display = 'none';
@@ -49,7 +48,7 @@ function displayPostsList() {
         const postElement = document.createElement('article');
         postElement.classList.add('blog-post');
 
-        // UPDATED: The link now points directly to the pre-rendered HTML file for each post.
+        // UPDATED: The link is now relative to index.html within the /blog/ directory.
         postElement.innerHTML = `
             <h2>${post.title}</h2>
             <p class="post-date">${new Date(post.date).toLocaleDateString('uk-UA', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
@@ -58,7 +57,7 @@ function displayPostsList() {
                 <div class="carousel-track" id="carouselTrackList-${post.id}">
                 </div>
             </div>
-            <a href="posts/${post.id}.html" class="read-more-button">Читати далі</a>
+            <a href="${post.id}.html" class="read-more-button">Читати далі</a>
         `;
         fragment.appendChild(postElement);
 
@@ -67,8 +66,6 @@ function displayPostsList() {
 
         if (post.images && post.images.length > 0) {
             carouselContainer.classList.toggle('static-images', post.images.length <= 2);
-            
-            // For carousels, duplicate images for a smooth continuous loop effect with CSS.
             const imagesToDisplay = post.images.length > 2 ? [...post.images, ...post.images] : post.images;
 
             imagesToDisplay.forEach(imageSrc => {
@@ -85,7 +82,6 @@ function displayPostsList() {
     blogPostsContainer.appendChild(fragment);
     currentIndex += postsToLoad.length;
 
-    // Show or hide the "Load More" button based on whether there are more posts to display.
     if (loadMoreButton) {
         loadMoreButton.style.display = currentIndex >= allPosts.length ? 'none' : 'block';
     }
@@ -94,7 +90,7 @@ function displayPostsList() {
 function displaySinglePost() {
     if (!singlePostContainer) return;
 
-    // UPDATED: Determine the post ID from the URL path, e.g., ".../posts/post1.html" -> "post1"
+    // This logic still works perfectly for getting the ID from the filename.
     const pathParts = window.location.pathname.split('/');
     const postId = pathParts.pop().replace('.html', '');
 
@@ -110,12 +106,7 @@ function displaySinglePost() {
         return;
     }
 
-    // --- REMOVED: DYNAMIC META TAG GENERATION ---
-    // This entire section has been removed. The meta tags are now "baked in" to the HTML
-    // by the `build.js` script before deployment. This ensures that social media crawlers
-    // can see them immediately, fixing the sharing preview issue.
-
-    // Create the post element to display the content.
+    // The content is displayed dynamically, while the meta tags are pre-rendered.
     const postElement = document.createElement('article');
     postElement.classList.add('blog-post', 'single-view');
     postElement.innerHTML = `
@@ -134,15 +125,14 @@ function displaySinglePost() {
 
     if (post.images && post.images.length > 0) {
         carouselContainer.classList.toggle('static-images', post.images.length <= 2);
-
-        // For carousels, duplicate images for a smooth continuous loop effect with CSS.
         const imagesToDisplay = post.images.length > 2 ? [...post.images, ...post.images] : post.images;
         
         imagesToDisplay.forEach(imageSrc => {
             const carouselItem = document.createElement('div');
             carouselItem.classList.add('carousel-item');
-            // Adjust image path to be relative to the `posts` sub-directory.
-            carouselItem.innerHTML = `<img src="${imageSrc.replace('../../', '../../')}" alt="${post.title} image">`;
+            // The image paths from posts.json (e.g., ../../img/...) are correct
+            // relative to the new post location (/blog/post1.html), so no change is needed.
+            carouselItem.innerHTML = `<img src="${imageSrc}" alt="${post.title} image">`;
             carouselTrack.appendChild(carouselItem);
         });
     } else {
@@ -150,10 +140,8 @@ function displaySinglePost() {
     }
 }
 
-// Add event listener for the "Load More" button if it exists.
 if (loadMoreButton) {
     loadMoreButton.addEventListener('click', displayPostsList);
 }
 
-// Initial call to fetch posts when the script loads.
 fetchPosts();
