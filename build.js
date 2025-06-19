@@ -32,7 +32,7 @@ async function generateBlogPosts() {
 
                 // The URL path includes the language prefix and no longer includes "/posts/"
                 const postUrl = `${config.baseUrl}/${lang}/blog/${post.id}.html`;
-                const description = post.description || post.content.replace(/<[^>]*>/g, '').substring(0, 160);
+                const description = post.description || post.content.replace(/<[^>]*>/g, '').substring(0, 80);
                 const imageUrl = post.images && post.images.length > 0
                     ? new URL(post.images[0].replace('../../', '/'), config.baseUrl).href
                     : new URL(config.defaultImage, config.baseUrl).href;
