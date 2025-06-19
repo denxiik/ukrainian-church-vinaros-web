@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="va">
+
+<head>
+    <title>Notícies</title>
+    <meta name="description" content="Notícies">
+
+    <meta property="og:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Església">
+    <meta property="og:description" content="Notícies">
+    <meta property="og:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/all-together-outside.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="igcu-castellon-vinaros-torreblanca.com">
+    <meta property="twitter:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
+    <meta name="twitter:title" content="Església">
+    <meta name="twitter:description" content="Notícies">
+    <meta name="twitter:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/all-together-outside.webp">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../img/logo.webp">
+
+    <link rel="stylesheet" href="../../css/blog.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="../../script/script.js"></script>
+
+    <link rel="alternate" hreflang="en" href="https://nasha-tserkva/en/" />
+    <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/" />
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCLS8DS737"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PCLS8DS737');
+</script>
+
+<header id="header-placeholder"></header>
+
+<body>
+
+    <main>
+        <section class="blog-hero">
+            <h1 class="title">Les Nostres Notícies i Esdeveniments</h1>
+            <p class="paragraph-normal">Mantén-te al dia dels últims esdeveniments i anuncis de la vida de la nostra parròquia.</p>
+        </section>
+
+        <section class="blog-posts-section">
+            <div id="blogPostsContainer" class="blog-posts-container">
+            </div>
+            <button id="loadMorePosts" class="load-more-button">Carregar més</button>
+        </section>
+    </main>
+
+    <script src="../../script/blog-logic.js"></script>
+</body>
+
+<footer id="footer-placeholder"></footer>
+
+<script>
+    // Carregar amb la pàgina
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log("Esdeveniment 'DOMContentLoaded' disparat a index.html.");
+
+        // Carregar primer tots els fragments HTML
+        const headerPromise = loadHTML('../header/index.html', 'header-placeholder');
+        const footerPromise = loadHTML('../footer/index.html', 'footer-placeholder');
+
+        Promise.all([headerPromise, footerPromise])
+            .then(() => {
+                console.log("Fragments HTML de capçalera i peu de pàgina carregats amb èxit.");
+
+                // Lògica d'alternança del menú i desplegable (del teu script.js)
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navBar = document.querySelector('.nav-bar');
+                const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
+
+                if (menuToggle && navBar) {
+                    menuToggle.addEventListener('click', function () {
+                        navBar.classList.toggle('active');
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    });
+                } else {
+                    console.warn("No s'ha trobat el botó d'alternança del menú o la barra de navegació. Revisa la teva estructura HTML.");
+                }
+
+                dropdowns.forEach(dropdown => {
+                    const dropdownLink = dropdown.querySelector('a');
+                    if (dropdownLink) {
+                        dropdownLink.addEventListener('click', function (event) {
+                            if (window.innerWidth <= 1080) {
+                                event.preventDefault();
+                                dropdown.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+
+                initializeLanguageOptions();
+
+            })
+            .catch(error => {
+                console.error('Un o més fragments HTML no s\'han pogut carregar:', error);
+            });
+    });
+</script>
+
+</html>

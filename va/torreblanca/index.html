@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="va">
+
+<head>
+    <title>Església</title>
+    <meta name="description" content="Torreblanca">
+
+    <meta property="og:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Església">
+    <meta property="og:description" content="Torreblanca">
+    <meta property="og:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/torreblanca-inside.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="igcu-castellon-vinaros-torreblanca.com">
+    <meta property="twitter:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
+    <meta name="twitter:title" content="Església">
+    <meta name="twitter:description" content="Torreblanca">
+    <meta name="twitter:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/torreblanca-inside.webp">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../img/logo.webp">
+
+    <link rel="stylesheet" href="../../css/locality.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script src="../../script/script.js"></script>
+
+    <link rel="alternate" hreflang="en" href="https://nasha-tserkva/en/" />
+    <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/" />
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCLS8DS737"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PCLS8DS737');
+</script>
+
+<header id="header-placeholder"></header>
+
+<body>
+
+    <div class="locality-container">
+        <img src="../../img/torreblanca-inside.webp" alt="Parròquia de l'Església Grecocatòlica Ucraïnesa a Torreblanca">
+
+        <h3>
+            Torreblanca
+        </h3>
+
+        <h4>
+            Parròquia de l'Església Grecocatòlica Ucraïnesa a Torreblanca
+        </h4>
+
+        <h5>
+            Adreça: Plaça de l'Església, 12596 Torreblanca, Espanya
+        </h5>
+
+        <p class="paragraph-normal">
+            La parròquia grecocatòlica ucraïnesa a Torreblanca és una comunitat espiritual que unix els fidels del ritu oriental en aquesta regió d'Espanya. Cada diumenge a les 13:00, els feligresos es reuneixen a l'església de Sant Apòstol Bartomeu per a la Divina Litúrgia. El capellà de la parròquia és el Pare Yuriy Shabanov, qui servix sincerament la comunitat, cuidant del seu creixement en la fe i la unitat.
+            <br><br>
+            El 27 d'abril de 2025, un esdeveniment significatiu va tindre lloc en la vida de la parròquia: la **consagració dels icones locals per a l'iconostasi.** Aquest important moment es va convertir en un símbol de l'aprofundiment de l'oració i la renovació espiritual de la comunitat en la tradició del ritu bizantí.
+            <br><br>
+            A la parròquia ja funciona una **escola de catequesi per a xiquets** que es preparen per a la seua Primera Confessió i Solemne Primera Comunió. Aquesta és una part important de la vida parroquial que ajuda els xicotets feligresos a conéixer més profundament la fe i a participar conscientment en els sagraments de l'Església.
+            <br><br>
+            Convidem sincerament tots els ucraïnesos i a aquells que desitgen unir-se a la nostra comunitat, per a créixer junts en la fe, l'oració i l'amor a Déu.
+        </p>
+        <hr class="separator">
+    </div>
+</body>
+
+<footer id="footer-placeholder"></footer>
+
+<script>
+    // Carregar amb la pàgina
+    document.addEventListener('DOMContentLoaded', function () {
+        // Carregar primer tots els fragments HTML
+        const headerPromise = loadHTML('../../va/header/index.html', 'header-placeholder');
+        const footerPromise = loadHTML('../../va/footer/index.html', 'footer-placeholder');
+
+        Promise.all([headerPromise, footerPromise])
+            .then(() => {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navBar = document.querySelector('.nav-bar');
+                const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
+
+                if (menuToggle && navBar) {
+                    menuToggle.addEventListener('click', function () {
+                        navBar.classList.toggle('active');
+
+                        // Tancar tots els desplegables quan s'alterna el menú principal
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    });
+                } else {
+                    console.warn("No s'ha trobat el botó d'alternança del menú o la barra de navegació. Revisa la teua estructura HTML.");
+                }
+
+                // Afegir un listener de clic a cada desplegable per a la vista mòbil
+                dropdowns.forEach(dropdown => {
+                    const dropdownLink = dropdown.querySelector('a');
+                    if (dropdownLink) {
+                        dropdownLink.addEventListener('click', function (event) {
+                            // Comprovar si estem en una pantalla xicoteta
+                            if (window.innerWidth <= 1080) {
+                                event.preventDefault();
+                                dropdown.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+
+                initializeLanguageOptions();
+
+            })
+            .catch(error => {
+                console.error('No s\'ha pogut carregar un o més fragments HTML:', error);
+            });
+
+
+    });
+
+
+</script>
+
+</html>

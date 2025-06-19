@@ -31,6 +31,20 @@ const languageData = {
         timeLabel: "Hora",
         descriptionLabel: "Descripción",
         noDescriptionText: "Sin descripción."
+    },
+    // Added Valencian language data
+    va: {
+        monthNames: [
+            "Gener", "Febrer", "Març", "Abril", "Maig", "Juny",
+            "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"
+        ],
+        dayNames: ["Diu", "Dil", "Dim", "Dix", "Dij", "Div", "Dis"],
+        modalDatePrefix: "Esdeveniments per al",
+        noEventsMessage: "No hi ha esdeveniments per a este dia.",
+        locationLabel: "Ubicació",
+        timeLabel: "Hora",
+        descriptionLabel: "Descripció",
+        noDescriptionText: "Sense descripció."
     }
 };
 
@@ -49,6 +63,8 @@ function getCurrentLanguage() {
         return 'ukr';
     } else if (pathSegments.includes('es')) {
         return 'es';
+    } else if (pathSegments.includes('va')) { // Check for Valencian
+        return 'va';
     }
     return 'ukr'; // Default to Ukrainian if no language segment is found
 }
@@ -111,7 +127,7 @@ async function initCustomCalendar() {
 
 /**
  * Sets the current language, reloads events, and re-renders the calendar.
- * @param {string} lang - The language code ('ukr' or 'es').
+ * @param {string} lang - The language code ('ukr', 'es', or 'va').
  */
 async function setLanguageAndRender(lang) {
     if (!languageData[lang]) {
@@ -159,7 +175,7 @@ function renderCalendar() {
 
     currentMonthYearEl.textContent = `${monthNames[currentMonth]} ${currentYear}`;
 
-    // Display day names (e.g., Нд, Пн for ukr or Dom, Lun for es)
+    // Display day names (e.g., Нд, Пн for ukr or Dom, Lun for es or Diu, Dil for va)
     const calendarWeekDaysEl = document.getElementById('calendar-weekdays');
     if (calendarWeekDaysEl) { // Ensure this element exists in your HTML
         calendarWeekDaysEl.innerHTML = '';
@@ -253,7 +269,16 @@ function renderCalendar() {
 function openEventModal(date, events) {
     const { modalDatePrefix, noEventsMessage, locationLabel, timeLabel, descriptionLabel, noDescriptionText } = languageData[currentLanguage];
 
-    modalDateEl.textContent = `${modalDatePrefix} ${date.toLocaleDateString(currentLanguage === 'ukr' ? 'uk-UA' : 'es-ES', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`;
+    let locale;
+    if (currentLanguage === 'ukr') {
+        locale = 'uk-UA';
+    } else if (currentLanguage === 'es') {
+        locale = 'es-ES';
+    } else if (currentLanguage === 'va') { // Add Valencian locale for date formatting
+        locale = 'ca-ES-valencia'; // Using 'ca-ES-valencia' for specific Valencian date formatting
+    }
+
+    modalDateEl.textContent = `${modalDatePrefix} ${date.toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`;
     modalEventsListEl.innerHTML = ''; // Clear previous events
 
     if (events.length === 0) {

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="va">
+
+<head>
+    <title>Horari</title>
+    <meta name="description" content="Horari">
+
+    <meta property="og:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Església">
+    <meta property="og:description" content="Horari">
+    <meta property="og:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/all-together-outside.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="igcu-castellon-vinaros-torreblanca.com">
+    <meta property="twitter:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
+    <meta name="twitter:title" content="Església">
+    <meta name="twitter:description" content="Horari">
+    <meta name="twitter:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/all-together-outside.webp">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horari</title>
+    <link rel="icon" href="../../img/logo.webp">
+
+    <link rel="stylesheet" href="../../css/calendar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script src="../../script/script.js"></script>
+    <script src="../../script/calendar-logic.js"></script>
+
+    <link rel="alternate" hreflang="en" href="https://nasha-tserkva/en/" />
+    <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/" />
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCLS8DS737"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PCLS8DS737');
+</script>
+
+<header id="header-placeholder"></header>
+
+<body>
+    <main class="calendar-page-content">
+        <section class="calendar-intro">
+            <h1 class="calendar-title">Horari de Serveis i Esdeveniments</h1>
+            <p class="calendar-description paragraph-normal">
+                Uneix-te a nosaltres per a la pregària en comú! A continuació trobaràs l'horari actual dels serveis per a les nostres parròquies.
+            </p>
+        </section>
+
+        <section class="events-list">
+            <div class="event-card">
+                <div class="event-icon">
+                    <i class="fas fa-church"></i>
+                </div>
+                <div class="event-details">
+                    <h3 class="event-location">Castelló</h3>
+                    <p class="event-time paragraph-normal">
+                        Cada dues setmanes — dissabte a les 18:00.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon">
+                    <i class="fas fa-church"></i>
+                </div>
+                <div class="event-details">
+                    <h3 class="event-location">Torreblanca</h3>
+                    <p class="event-time paragraph-normal">
+                        Tots els diumenges a les 13:00.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon">
+                    <i class="fas fa-church"></i>
+                </div>
+                <div class="event-details">
+                    <h3 class="event-location">Vinaròs</h3>
+                    <p class="event-time paragraph-normal">
+                        Tots els diumenges a les 10:00.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="custom-calendar-section">
+            <h2 class="calendar-section-title">Calendari d'Esdeveniments</h2>
+            <p class="calendar-section-description paragraph-normal">
+                Pots veure l'horari complet dels serveis i altres esdeveniments parroquials al calendari interactiu.
+            </p>
+            <div id='custom-calendar-display'>
+                <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <div id="currentMonthYear"></div>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <div class="calendar-weekdays">
+                    <div>Dg</div>
+                    <div>Dl</div>
+                    <div>Dm</div>
+                    <div>Dc</div>
+                    <div>Dj</div>
+                    <div>Dv</div>
+                    <div>Ds</div>
+                </div>
+                <div id="calendar-days" class="calendar-days"></div>
+            </div>
+        </section>
+
+        <div class="calendar-legend">
+            <h3>Colors d'esdeveniments:</h3>
+            <ul>
+                <li><span class="legend-color green"></span> Vinaròs</li>
+                <li><span class="legend-color blue"></span> Torreblanca</li>
+                <li><span class="legend-color yellow"></span> Castelló</li>
+            </ul>
+        </div>
+
+        <div id="eventModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3 id="modalDate"></h3>
+                <div id="modalEventsList">
+                </div>
+                <p id="noEventsMessage" class="paragraph-normal" style="display: none;">No hi ha esdeveniments per a este dia.</p>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+<footer id="footer-placeholder"></footer>
+
+<script>
+    // Carregar amb la pàgina
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log("Esdeveniment DOM Content Loaded disparat a index.html.");
+
+        // Carregar primer tots els fragments HTML
+        const headerPromise = loadHTML('../header/index.html', 'header-placeholder');
+        const footerPromise = loadHTML('../footer/index.html', 'footer-placeholder');
+
+        Promise.all([headerPromise, footerPromise])
+            .then(() => {
+                console.log("Fragments HTML de capçalera i peu de pàgina carregats amb èxit.");
+
+                // Lògica d'alternança del menú i desplegable (del teu script.js)
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navBar = document.querySelector('.nav-bar');
+                const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
+
+                if (menuToggle && navBar) {
+                    menuToggle.addEventListener('click', function () {
+                        navBar.classList.toggle('active');
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    });
+                } else {
+                    console.warn("No s'ha trobat el botó d'alternança del menú o la barra de navegació. Revisa la teva estructura HTML.");
+                }
+
+                dropdowns.forEach(dropdown => {
+                    const dropdownLink = dropdown.querySelector('a');
+                    if (dropdownLink) {
+                        dropdownLink.addEventListener('click', function (event) {
+                            if (window.innerWidth <= 1080) {
+                                event.preventDefault();
+                                dropdown.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+
+                initializeLanguageOptions();
+
+                console.log("Intentant inicialitzar el calendari personalitzat...");
+                initCustomCalendar();
+            })
+            .catch(error => {
+                console.error('Un o més fragments HTML no s\'han pogut carregar:', error);
+            });
+    });
+</script>
+
+</html>

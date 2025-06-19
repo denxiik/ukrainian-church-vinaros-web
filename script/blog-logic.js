@@ -14,12 +14,14 @@ const isSinglePostPage = window.location.pathname.endsWith('.html') && !window.l
 
 async function fetchPosts() {
     // Determine the current language from the URL path
-    // Example: /ukr/blog/index.html or /es/blog/index.html
+    // Example: /ukr/blog/index.html or /es/blog/index.html or /va/blog/index.html
     const pathSegments = window.location.pathname.split('/');
     if (pathSegments.includes('ukr')) {
         currentLanguage = 'ukr';
     } else if (pathSegments.includes('es')) {
         currentLanguage = 'es';
+    } else if (pathSegments.includes('va')) { // Add Valencian language detection
+        currentLanguage = 'va';
     }
 
     try {
@@ -42,8 +44,10 @@ async function fetchPosts() {
         let errorMessage = '';
         if (currentLanguage === 'ukr') {
             errorMessage = 'Не вдалося завантажити дописи. Спробуйте пізніше.';
-        } else {
+        } else if (currentLanguage === 'es') {
             errorMessage = 'No se pudieron cargar las publicaciones. Inténtelo de nuevo más tarde.';
+        } else if (currentLanguage === 'va') { // Add Valencian translation for error message
+            errorMessage = 'No s\'han pogut carregar les publicacions. Torneu-ho a intentar més tard.';
         }
 
         if (blogPostsContainer) {
@@ -67,10 +71,26 @@ function displayPostsList() {
 
         // UPDATED: Localize date string based on currentLanguage
         const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-        const localizedDate = new Date(post.date).toLocaleDateString(currentLanguage === 'ukr' ? 'uk-UA' : 'es-ES', dateOptions);
+        let locale;
+        if (currentLanguage === 'ukr') {
+            locale = 'uk-UA';
+        } else if (currentLanguage === 'es') {
+            locale = 'es-ES';
+        } else if (currentLanguage === 'va') { // Add Valencian locale
+            locale = 'ca-ES-valencia'; // Or 'ca-ES' if 'ca-ES-valencia' is not supported by all browsers
+        }
+        const localizedDate = new Date(post.date).toLocaleDateString(locale, dateOptions);
 
         // UPDATED: Ensure the read more button text is localized
-        const readMoreText = currentLanguage === 'ukr' ? 'Читати далі' : 'Leer más';
+        let readMoreText;
+        if (currentLanguage === 'ukr') {
+            readMoreText = 'Читати далі';
+        } else if (currentLanguage === 'es') {
+            readMoreText = 'Leer más';
+        } else if (currentLanguage === 'va') { // Add Valencian translation for read more button
+            readMoreText = 'Llegir més';
+        }
+
 
         // UPDATED: The link is now relative to index.html within the /blog/ directory, and we need to include the language prefix
         postElement.innerHTML = `
@@ -108,7 +128,15 @@ function displayPostsList() {
 
     if (loadMoreButton) {
         // UPDATED: Localize load more button text
-        loadMoreButton.textContent = currentLanguage === 'ukr' ? 'Завантажити ще' : 'Cargar más';
+        let loadMoreButtonText;
+        if (currentLanguage === 'ukr') {
+            loadMoreButtonText = 'Завантажити ще';
+        } else if (currentLanguage === 'es') {
+            loadMoreButtonText = 'Cargar más';
+        } else if (currentLanguage === 'va') { // Add Valencian translation for load more button
+            loadMoreButtonText = 'Carregar més';
+        }
+        loadMoreButton.textContent = loadMoreButtonText;
         loadMoreButton.style.display = currentIndex >= allPosts.length ? 'none' : 'block';
     }
 }
@@ -122,8 +150,10 @@ function displaySinglePost() {
     let notFoundMessage = '';
     if (currentLanguage === 'ukr') {
         notFoundMessage = 'Допис не знайдено.';
-    } else {
+    } else if (currentLanguage === 'es') {
         notFoundMessage = 'Publicación no encontrada.';
+    } else if (currentLanguage === 'va') { // Add Valencian translation for not found message
+        notFoundMessage = 'Publicació no trobada.';
     }
 
     if (!postId) {
@@ -140,7 +170,15 @@ function displaySinglePost() {
 
     // UPDATED: Localize date string based on currentLanguage
     const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-    const localizedDate = new Date(post.date).toLocaleDateString(currentLanguage === 'ukr' ? 'uk-UA' : 'es-ES', dateOptions);
+    let locale;
+    if (currentLanguage === 'ukr') {
+        locale = 'uk-UA';
+    } else if (currentLanguage === 'es') {
+        locale = 'es-ES';
+    } else if (currentLanguage === 'va') { // Add Valencian locale
+        locale = 'ca-ES-valencia'; // Or 'ca-ES' if 'ca-ES-valencia' is not supported by all browsers
+    }
+    const localizedDate = new Date(post.date).toLocaleDateString(locale, dateOptions);
 
     // The content is displayed dynamically, while the meta tags are pre-rendered.
     const postElement = document.createElement('article');

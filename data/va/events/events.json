@@ -1,0 +1,37 @@
+[
+  {
+    "id": "castellon",
+    "title": "Servei Diví (Castelló)",
+    "location": "Castelló",
+    "time": "18:00",
+    "description": "Servei Diví en ucraïnés cada dues setmanes.",
+    "colorClass": "event-yellow",
+    "recurrence": {
+      "type": "bi-weekly-saturday"
+    }
+  },
+  {
+    "id": "torreblanca",
+    "title": "Servei Diví (Torreblanca)",
+    "location": "Torreblanca",
+    "time": "13:00",
+    "description": "Cada diumenge a les 13:00.",
+    "colorClass": "event-blue",
+    "recurrence": {
+      "type": "weekly",
+      "dayOfWeek": 0
+    }
+  },
+  {
+    "id": "vinaros",
+    "title": "Servei Diví (Vinaròs)",
+    "location": "Vinaròs",
+    "time": "10:00",
+    "description": "Cada diumenge a les 10:00.",
+    "colorClass": "event-green",
+    "recurrence": {
+      "type": "weekly",
+      "dayOfWeek": 0
+    }
+  }
+]

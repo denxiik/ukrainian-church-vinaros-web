@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="va">
+
+<head>
+    <title>Contacte</title>
+    <meta name="description" content="Contacte">
+
+    <meta property="og:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Església">
+    <meta property="og:description" content="Contacte">
+    <meta property="og:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/all-together-outside.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="igcu-castellon-vinaros-torreblanca.com">
+    <meta property="twitter:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
+    <meta name="twitter:title" content="Església">
+    <meta name="twitter:description" content="Contacte">
+    <meta name="twitter:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/all-together-outside.webp">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../img/asoPMR-logo-rounded.webp">
+
+    <link rel="stylesheet" href="../../css/contact.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script src="../../script/script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <link rel="alternate" hreflang="en" href="https://asopmr.org/en/contact.html" />
+    <link rel="alternate" hreflang="es" href="https://asopmr.org/es/contact.html" />
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCLS8DS737"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PCLS8DS737');
+</script>
+
+<header id="header-placeholder"></header>
+
+<body>
+    <section class="contact">
+        <div class="contact-info">
+            <p class="paragraph-bold title">Contacta'ns.</p>
+            <h3>Ens alegra veure't ací!</h3>
+
+            <div class="address">
+                <p class="paragraph-bold">Adreces:</p>
+                <p class="paragraph-normal">Plaça de Sant Valent, 18, 12500 Vinaròs</p>
+                <p class="paragraph-normal">Plaça de l'Església, 12596 Torreblanca</p>
+                <p class="paragraph-normal">Carrer Alloza, 143, 12001 Castelló</p>
+            </div>
+
+            <p class="paragraph-bold">Tens preguntes?</p>
+            <p class="paragraph-normal">Envia'ns un correu electrònic</p>
+            <a href="mailto:asopmr@asopmr.org">
+                <button>
+                    yuriishabanov1846@gmail.com
+                </button>
+            </a>
+            </div>
+
+        </section>
+</body>
+
+<script>
+    // Carregar amb la pàgina
+    document.addEventListener('DOMContentLoaded', function () {
+        const headerPromise = loadHTML('../header/index.html', 'header-placeholder');
+
+        Promise.all([headerPromise])
+            .then(() => {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navBar = document.querySelector('.nav-bar');
+                const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
+
+                if (menuToggle && navBar) {
+                    menuToggle.addEventListener('click', function () {
+                        navBar.classList.toggle('active');
+
+                        // Tancar tots els desplegables quan s'alterna el menú principal
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    });
+                } else {
+                    console.warn("No s'ha trobat el botó d'alternança del menú o la barra de navegació. Revisa la teua estructura HTML.");
+                }
+
+                // Afegir un listener de clic a cada desplegable per a la vista mòbil
+                dropdowns.forEach(dropdown => {
+                    const dropdownLink = dropdown.querySelector('a');
+                    if (dropdownLink) {
+                        dropdownLink.addEventListener('click', function (event) {
+                            // Comprovar si estem en una pantalla xicoteta
+                            if (window.innerWidth <= 1080) {
+                                event.preventDefault();
+                                dropdown.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+
+                initializeLanguageOptions();
+
+            })
+            .catch(error => {
+                console.error('No s\'ha pogut carregar un o més fragments HTML:', error);
+            });
+    });
+</script>
+
+</html>

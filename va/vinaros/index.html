@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="va">
+
+<head>
+    <title>Església</title>
+    <meta name="description" content="Vinaròs">
+
+    <meta property="og:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Església">
+    <meta property="og:description" content="Vinaròs">
+    <meta property="og:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/vinaros-inside.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="igcu-castellon-vinaros-torreblanca.com">
+    <meta property="twitter:url" content="https://www.igcu-castellon-vinaros-torreblanca.com/">
+    <meta name="twitter:title" content="Església">
+    <meta name="twitter:description" content="Vinaròs">
+    <meta name="twitter:image" content="https://www.igcu-castellon-vinaros-torreblanca.com/img/vinaros-inside.webp">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../img/logo.webp">
+
+    <link rel="stylesheet" href="../../css/locality.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script src="../../script/script.js"></script>
+
+    <link rel="alternate" hreflang="en" href="https://nasha-tserkva/en/" />
+    <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/" />
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCLS8DS737"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PCLS8DS737');
+</script>
+
+<header id="header-placeholder"></header>
+
+<body>
+
+    <div class="locality-container">
+        <img src="../../img/vinaros-inside.webp" alt="Parròquia de l'Església Grecocatòlica Ucraïnesa a Vinaròs">
+
+        <h3>
+            Vinaròs
+        </h3>
+
+        <h4>
+            Parròquia de l'Església Grecocatòlica Ucraïnesa a Vinaròs
+        </h4>
+
+        <h5>
+            Adreça: Plaça de Sant Valent, 18, 12500 Vinaròs, Castelló
+        </h5>
+
+        <p class="paragraph-normal">
+            La parròquia ucraïnesa a la ciutat de Vinaròs és un centre espiritual per als fidels de l'Església Grecocatòlica Ucraïnesa que residixen en aquesta regió d'Espanya. El capellà de la parròquia és el Pare Yuriy Shabanov, qui va començar el seu ministeri l'octubre de 2024.
+            <br> <br>
+            **Cada diumenge a les 10:00**, la comunitat es reunix per a la Divina Litúrgia, on preguen junts, donen gràcies a Déu i es recolzen mútuament en la fe. La parròquia es desenvolupa activament, unint els ucraïnesos al voltant de l'oració, les tradicions i la cultura comunes.
+            <br> <br>
+            La parròquia compta amb una **escola de catequesi per a xiquets** que es preparen per a la seua Primera Confessió i Solemne Primera Comunió. L'ensenyament ajuda els xicotets feligresos a comprendre millor els fonaments de la fe cristiana i a preparar-se per als moments importants de la vida espiritual.
+            <br> <br>
+            Convidem sincerament tots els ucraïnesos i a aquells que desitgen unir-se a la nostra comunitat! Que la nostra parròquia es convertisca en la seua llar espiritual, un lloc de suport, esperança i comunió viva amb Déu i el pròxim.
+        </p>
+        <hr class="separator">
+    </div>
+
+</body>
+
+<footer id="footer-placeholder"></footer>
+
+<script>
+    // Load with page
+    document.addEventListener('DOMContentLoaded', function () {
+        // Load all HTML fragments first
+        const headerPromise = loadHTML('../../va/header/index.html', 'header-placeholder');
+        const footerPromise = loadHTML('../../va/footer/index.html', 'footer-placeholder');
+
+        Promise.all([headerPromise, footerPromise])
+            .then(() => {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navBar = document.querySelector('.nav-bar');
+                const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
+
+                if (menuToggle && navBar) {
+                    menuToggle.addEventListener('click', function () {
+                        navBar.classList.toggle('active');
+
+                        // Close all dropdowns when the main menu is toggled
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    });
+                } else {
+                    console.warn("No s'ha trobat el botó d'alternança del menú o la barra de navegació. Revisa la teua estructura HTML.");
+                }
+
+                // Add click listener to each dropdown for mobile view
+                dropdowns.forEach(dropdown => {
+                    const dropdownLink = dropdown.querySelector('a');
+                    if (dropdownLink) {
+                        dropdownLink.addEventListener('click', function (event) {
+                            // Check if we are on a small screen
+                            if (window.innerWidth <= 1080) {
+                                event.preventDefault();
+                                dropdown.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+
+                initializeLanguageOptions();
+
+            })
+            .catch(error => {
+                console.error('Un o més fragments HTML no s\'han pogut carregar:', error);
+            });
+
+
+    });
+
+
+</script>
+
+</html>
