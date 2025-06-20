@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <script src="../../script/script.js"></script>
+    <script src="../../script/contactForm.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <link rel="alternate" hreflang="en" href="https://asopmr.org/en/contact.html" />
@@ -68,11 +69,11 @@
                     yuriishabanov1846@gmail.com
                 </button>
             </a>
-            <!--p class="paragraph-normal">Або заповніть форму, і ми незабаром зв'яжемося з вами!</p-->
+            <p class="paragraph-normal">Або заповніть форму, і ми незабаром зв'яжемося з вами!</p>
         </div>
 
-        <!--div class="contact-form-container">
-            <form class="contact-form" action="" method="POST">
+        <div class="contact-form-container">
+            <form class="contact-form" id="contactForm">
                 <div class="form-group">
                     <input type="text" id="name" name="name" placeholder="Ім'я:" required>
                 </div>
@@ -83,11 +84,11 @@
                     <textarea id="message" name="message" rows="5" placeholder="Повідомлення" required></textarea>
                 </div>
                 <div class="g-recaptcha-wrapper">
-                    <div class="g-recaptcha" data-sitekey="6LdJMlsrAAAAAF-UCCWgAE-11JA8W7qBb8A0tlMz=s"></div>
+                    <div class="g-recaptcha" data-sitekey="6LcYxmcrAAAAAKF9qTDG1BoII-CZVktWYh9yrChY"></div>
                 </div>
                 <button type="submit">Надіслати</button>
             </form>
-        </div-->
+        </div>
     </section>
 </body>
 
@@ -130,7 +131,7 @@
                 });
                 
                 initializeLanguageOptions();
-                
+                initContactForm('contactForm', 'ukr', 'Контакт'); 
             })
             .catch(error => {
                 console.error('Не вдалося завантажити один або кілька HTML-фрагментів:', error);
