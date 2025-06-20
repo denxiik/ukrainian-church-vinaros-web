@@ -51,7 +51,7 @@ function initContactForm(formId, lang = 'es', subjectPrefix = '') {
             connectionError: 'Hi ha hagut un error de connexió. Per favor, torna a intentar-ho.',
             pleaseTryAgain: 'Per favor, torna a intentar-ho.'
         },
-        uk: {
+        ukr: {
             sending: 'Надсилання...',
             verifyRobot: 'Будь ласка, підтвердьте, що ви не робот.',
             privacyConsent: 'Ви повинні прийняти політику конфіденційності, щоб надіслати форму.',
