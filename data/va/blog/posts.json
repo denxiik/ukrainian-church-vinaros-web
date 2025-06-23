@@ -60,5 +60,22 @@
       "../../img/blog/post5/1.jpg",
       "../../img/blog/post5/2.jpg"
     ]
-  }
+  },
+  {
+    "id": "post6",
+    "title": "Consagració d'un nou Evangeli a Vinaròs i encenser a Castelló",
+    "date": "2025-06-22",
+    "content": "Consagració d'un nou Evangeli a Vinaròs i encenser a Castelló: un pas cap a un coneixement més profund dels serveis religiosos de ritu oriental. Hui, diumenge 22 de juny, es va dur a terme la consagració d'un nou Evangeli a la parròquia de Vinaròs. Aquest és un moment especial i solemne en la vida de la parròquia, perquè l'Evangeli no és només un llibre, sinó la Paraula del Déu Vivent, que ressona en la nostra parròquia cada diumenge i festivitat. En la vida litúrgica, la Comunió es realitza dues vegades: primer, a través de l'escolta de la Paraula de Déu, i després, en el Sagrament de l'Eucaristia. I si per al Senyor ens oferim a nosaltres mateixos i els nostres cors, aleshores tot el que li serveix ha de ser digne, bell i lluminós. Perquè a Déu li pertany el millor, i no només en els dons del pa i el vi, sinó també en les coses amb les quals li servim. A més, el dia anterior, dissabte 21 de juny, es va consagrar un nou encenser a la parròquia de Castelló. El creixement de la comunitat parroquial inspira una renovació contínua de tot el necessari per a la plena celebració dels serveis religiosos. En un futur pròxim, es planeja adquirir tots els articles litúrgics necessaris perquè cada Litúrgia se celebre amb la deguda bellesa i dignitat. Que aquests passos siguen un signe del nostre amor a Déu, de la nostra unitat com a Església i del nostre desig de servir-lo amb un cor pur i tota l'ànima. Perquè on es reuneix el poble de Déu, allí viu Crist. I on hi ha un Crist vivent, tot es transforma en el Cel. Que el Senyor beneïsca generosament tots els donants i els retribuïsca el cèntuple.",
+    "description": "Consagració d'un nou Evangeli a Vinaròs i un encenser a Castelló: un pas cap a un coneixement més profund dels serveis religiosos de ritu oriental.",
+    "images": [
+        "../../img/blog/post6/1.jpg",
+        "../../img/blog/post6/2.jpg",
+        "../../img/blog/post6/3.jpg",
+        "../../img/blog/post6/4.jpg",
+        "../../img/blog/post6/5.jpg",
+        "../../img/blog/post6/6.jpg",
+        "../../img/blog/post6/7.jpg",
+        "../../img/blog/post6/8.jpg"
+    ]
+}
 ]

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="va">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>En la parroquia de la Iglesia Greco-Católica Ucraniana en el pueblo español de Torreblanca (Valencia) se celebró por primera vez la fiesta de la Primera Confesión y la Primera Comunión Solemne.</title>
+    <title>En la parròquia de l'Església Grecocatòlica Ucraïnesa en el poble espanyol de Torreblanca (València) es va celebrar per primera vegada la festa de la Primera Confessió i la Primera Comunió Solemne.</title>
     <link rel="icon" href="../../img/logo.webp">
 
     <link rel="stylesheet" href="../../css/blog.css" />
@@ -14,20 +14,20 @@
     <link rel="alternate" hreflang="en" href="https://nasha-tserkva/en/blog/post2.html" />
     <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/blog/post2.html" />
 
-    <meta property="og:url" content="https://igcu-castellon-vinaros-torreblanca.com/es/blog/post2.html" />
+    <meta property="og:url" content="https://igcu-castellon-vinaros-torreblanca.com/va/blog/post2.html" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="En la parroquia de la Iglesia Greco-Católica Ucraniana en el pueblo español de Torreblanca (Valencia) se celebró por primera vez la fiesta de la Primera Confesión y la Primera Comunión Solemne." />
-    <meta property="og:description" content="Durante todo el año, los niños se prepararon para el encuentro con Jesús Eucaris" />
+    <meta property="og:title" content="En la parròquia de l'Església Grecocatòlica Ucraïnesa en el poble espanyol de Torreblanca (València) es va celebrar per primera vegada la festa de la Primera Confessió i la Primera Comunió Solemne." />
+    <meta property="og:description" content="Durant tot l'any, els xiquets es van preparar per a la trobada amb Jesús Eucaris" />
     <meta property="og:image" content=""https://igcu-castellon-vinaros-torreblanca.com/img/blog/post3/1.jpg"" />
-    <meta property="og:image:alt" content="En la parroquia de la Iglesia Greco-Católica Ucraniana en el pueblo español de Torreblanca (Valencia) se celebró por primera vez la fiesta de la Primera Confesión y la Primera Comunión Solemne." />
+    <meta property="og:image:alt" content="En la parròquia de l'Església Grecocatòlica Ucraïnesa en el poble espanyol de Torreblanca (València) es va celebrar per primera vegada la festa de la Primera Confessió i la Primera Comunió Solemne." />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:domain" content="nasha-tserkva.com" />
-    <meta name="twitter:url" content="https://igcu-castellon-vinaros-torreblanca.com/es/blog/post2.html" />
-    <meta name="twitter:title" content="En la parroquia de la Iglesia Greco-Católica Ucraniana en el pueblo español de Torreblanca (Valencia) se celebró por primera vez la fiesta de la Primera Confesión y la Primera Comunión Solemne." />
-    <meta name="twitter:description" content="Durante todo el año, los niños se prepararon para el encuentro con Jesús Eucaris" />
+    <meta name="twitter:url" content="https://igcu-castellon-vinaros-torreblanca.com/va/blog/post2.html" />
+    <meta name="twitter:title" content="En la parròquia de l'Església Grecocatòlica Ucraïnesa en el poble espanyol de Torreblanca (València) es va celebrar per primera vegada la festa de la Primera Confessió i la Primera Comunió Solemne." />
+    <meta name="twitter:description" content="Durant tot l'any, els xiquets es van preparar per a la trobada amb Jesús Eucaris" />
     <meta name="twitter:image" content="https://igcu-castellon-vinaros-torreblanca.com/img/blog/post3/1.jpg" />
-    <meta name="description" content=""Durante todo el año, los niños se prepararon para el encuentro con Jesús Eucaris"">
+    <meta name="description" content=""Durant tot l'any, els xiquets es van preparar per a la trobada amb Jesús Eucaris"">
 
 </head>
 
@@ -48,7 +48,7 @@
         <section class="single-post-section">
             <div id="singlePostContainer" class="single-post-container">
             </div>
-            <a href="index.html" class="back-to-blog-button">Volver a todas las publicaciones</a>
+            <a href="index.html" class="back-to-blog-button">Tornar a totes les publicacions</a>
         </section>
     </main>
 
@@ -58,19 +58,19 @@
 <footer id="footer-placeholder"></footer>
 
 <script>
-    // Cargar con la página
+    // Carregar amb la pàgina
     document.addEventListener('DOMContentLoaded', function () {
-        console.log("Evento 'DOMContentLoaded' disparado en post.html o blog.html.");
+        console.log("Esdeveniment 'DOMContentLoaded' disparat a post.html o blog.html.");
 
-        // Cargar primero todos los fragmentos HTML
+        // Carregar primer tots els fragments HTML
         const headerPromise = loadHTML('../header/index.html', 'header-placeholder');
         const footerPromise = loadHTML('../footer/index.html', 'footer-placeholder');
 
         Promise.all([headerPromise, footerPromise])
             .then(() => {
-                console.log("Fragmentos HTML de encabezado y pie de página cargados exitosamente.");
+                console.log("Fragments HTML de capçalera i peu de pàgina carregats amb èxit.");
 
-                // Lógica de alternancia del menú y desplegable (de tu script.js)
+                // Lògica d'alternança del menú i desplegable (del teu script.js)
                 const menuToggle = document.querySelector('.menu-toggle');
                 const navBar = document.querySelector('.nav-bar');
                 const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
@@ -83,7 +83,7 @@
                         });
                     });
                 } else {
-                    console.warn("No se encontró el botón de alternancia del menú o la barra de navegación. Revisa tu estructura HTML.");
+                    console.warn("No s'ha trobat el botó d'alternança del menú o la barra de navegació. Revisa la teva estructura HTML.");
                 }
 
                 dropdowns.forEach(dropdown => {
@@ -98,12 +98,12 @@
                     }
                 });
 
-                
+
                 initializeLanguageOptions();
-                
+
             })
             .catch(error => {
-                console.error('Uno o más fragmentos HTML no se pudieron cargar:', error);
+                console.error('Un o més fragments HTML no s\'han pogut carregar:', error);
             });
     });
 </script>
