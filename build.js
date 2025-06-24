@@ -41,7 +41,8 @@ async function generateBlogPosts() {
                 finalHtml = finalHtml
                     .replace(/\{\{postTitle\}\}|<%= postTitle %>/g, post.title)
                     .replace(/\{\{metaDescription\}\}|"\{\{ogDescription\}\}"|"\{\{twitterDescription\}\}"/g, `"${description}"`)
-                    .replace(/\{\{ogImage\}\}|"\{\{twitterImage\}\}"/g, `"${imageUrl}"`)
+                    // Corrected line for og:image and twitter:image
+                    .replace(/\{\{ogImage\}\}|\{\{twitterImage\}\}/g, imageUrl) 
                     .replace(/\{\{ogImageAlt\}\}/g, post.title)
                     // Link placeholders now point to the new structure including language
                     .replace(/https:\/\/nasha-tserkva\.com\/blog\/\{\{postId\}\}/g, postUrl)
@@ -49,7 +50,7 @@ async function generateBlogPosts() {
                     // Dynamically set hreflang links based on current language being processed
                     .replace(/<link rel="alternate" hreflang="en" href="https:\/\/nasha-tserkva\/en\/blog\/" \/>/, `<link rel="alternate" hreflang="en" href="${config.baseUrl}/en/blog/${post.id}.html" />`)
                     .replace(/<link rel="alternate" hreflang="es" href="https:\/\/nasha-tserkva\/es\/blog\/" \/>/, `<link rel="alternate" hreflang="es" href="${config.baseUrl}/es/blog/${post.id}.html" />`)
-                    .replace(/<link rel="alternate" hreflang="ukr" href="https:\/\/nasha-tserkva\/ukr\/blog\/" \/>/, `<link rel="alternate" hreflang="ukr" href="${config.baseUrl}/ukr/blog/${post.id}.html" />`)
+                    .replace(/<link rel="alternate" hreflang="ukr" href="https:\/\/nasha-tserkva\/ukr\/blog\/" \/>/, `<link rel="alternate" hreflang="ukr" href="${config.baseUrl}/ukr/blog/${post.id}.html" />`);
 
 
                 // 5. Save the new, complete HTML file
