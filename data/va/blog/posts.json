@@ -90,5 +90,16 @@
       "../../img/blog/post7/3.jpg",
       "../../img/blog/post7/4.jpg"
     ]
+  },
+  {
+    "id": "post8",
+    "title": "El Pare Yuriy Shabanov participa en un seminari per a sacerdots de l'UGCC",
+    "date": "2025-06-25",
+    "content": "El Pare Yuriy Shabanov, mentre participa en un seminari per a sacerdots de la PMV UGCC que se celebra a la capital italiana, va visitar la seua alma mater, la Pontificia Università Lateranense (Universitat Pontifícia Lateranense), on va estudiar durant quasi tres anys. En els murs de la seua estimada universitat, va tindre l'oportunitat de parlar amb els seus professors, en particular amb el seu director de tesi, el professor Paolo Assolan, un reconegut teòleg i director de l'Institut Pastoral «Redemptor Hominis». El professor Assolan va acompanyar el Pare Yuriy durant la seua formació acadèmica a Roma i també manté contacte amb els exalumnes que realitzen servei pastoral en diversos països del món. Durant la reunió, el Pare Yuriy i el Prof. Assolan van discutir els desafiaments actuals de la pastoral moderna, especialment en el context del treball amb migrants. El Pare Yuriy va compartir l'experiència del seu ministeri a Espanya, on va poder aplicar els coneixements adquirits en la pràctica: en el treball parroquial, la catequesi i l'adaptació al ministeri pastoral. Els seus estudis a la Pontificia Università Lateranense es van convertir en una base fonamental per al Pare Yuriy, que utilitza activament en el seu ministeri diari. La combinació de la formació acadèmica i l'experiència pastoral a Espanya l'ajuda a comprendre més profundament els desafiaments del nostre temps i a respondre eficaçment a les necessitats espirituals de l'actualitat. Així, la seua visita a la universitat no sols va ser una oportunitat per a trobar-se amb antics mentors, professors i amics, sinó també un símbol de l'estret vincle entre l'educació teològica i la pràctica del ministeri pastoral en el món modern.",
+    "description": "El Pare Yuriy Shabanov participa en un seminari per a sacerdots de l'UGCC",
+    "images": [
+      "../../img/blog/post8/1.jpg",
+      "../../img/blog/post8/2.jpg"
+    ]
   }
 ]

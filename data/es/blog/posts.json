@@ -90,5 +90,16 @@
       "../../img/blog/post7/3.jpg",
       "../../img/blog/post7/4.jpg"
     ]
+  },
+  {
+    "id": "post8",
+    "title": "El Padre Yuriy Shabanov participa en un seminario para sacerdotes de la UGCC",
+    "date": "2025-06-25",
+    "content": "El Padre Yuriy Shabanov, mientras participa en un seminario para sacerdotes de la PMV UGCC que se celebra en la capital italiana, visitó su alma máter, la Pontificia Università Lateranense (Universidad Pontificia Lateranense), donde estudió durante casi tres años. En los muros de su querida universidad, tuvo la oportunidad de hablar con sus profesores, en particular con su director de tesis, el profesor Paolo Assolan, un renombrado teólogo y director del Instituto Pastoral «Redemptor Hominis». El profesor Assolan acompañó al Padre Yuriy durante su formación académica en Roma y también mantiene contacto con los exalumnos que realizan servicio pastoral en varios países del mundo. Durante la reunión, el Padre Yuriy y el Prof. Assolan discutieron los desafíos actuales de la pastoral moderna, especialmente en el contexto del trabajo con migrantes. El Padre Yuriy compartió la experiencia de su ministerio en España, donde pudo aplicar los conocimientos adquiridos en la práctica: en el trabajo parroquial, la catequesis y la adaptación al ministerio pastoral. Sus estudios en la Pontificia Università Lateranense se convirtieron en una base fundamental para el Padre Yuriy, que utiliza activamente en su ministerio diario. La combinación de la formación académica y la experiencia pastoral en España le ayuda a comprender más profundamente los desafíos de nuestro tiempo y a responder eficazmente a las necesidades espirituales de la actualidad. Así, su visita a la universidad no solo fue una oportunidad para encontrarse con antiguos mentores, profesores y amigos, sino también un símbolo del estrecho vínculo entre la educación teológica y la práctica del ministerio pastoral en el mundo moderno.",
+    "description": "El Padre Yuriy Shabanov participa en un seminario para sacerdotes de la UGCC",
+    "images": [
+      "../../img/blog/post8/1.jpg",
+      "../../img/blog/post8/2.jpg"
+    ]
   }
 ]

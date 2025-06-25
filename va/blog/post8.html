@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="va">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Pare Yuriy Shabanov participa en un seminari per a sacerdots de l'UGCC</title>
+    <link rel="icon" href="../../img/logo.webp">
+
+    <link rel="stylesheet" href="../../css/blog.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="../../script/script.js"></script>
+
+    <link rel="alternate" hreflang="en" href="https://nasha-tserkva/en/blog/post8.html" />
+    <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/blog/post8.html" />
+
+    <meta property="og:url" content="https://igcu-castellon-vinaros-torreblanca.com/va/blog/post8.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="El Pare Yuriy Shabanov participa en un seminari per a sacerdots de l'UGCC" />
+    <meta property="og:description" content="El Pare Yuriy Shabanov participa en un seminari per a sacerdots de l'UGCC" />
+    <meta property="og:image" content="https://igcu-castellon-vinaros-torreblanca.com/img/blog/post8/1.jpg" />
+    <meta property="og:image:alt" content="El Pare Yuriy Shabanov participa en un seminari per a sacerdots de l'UGCC" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content="nasha-tserkva.com" />
+    <meta name="twitter:url" content="https://igcu-castellon-vinaros-torreblanca.com/va/blog/post8.html" />
+    <meta name="twitter:title" content="El Pare Yuriy Shabanov participa en un seminari per a sacerdots de l'UGCC" />
+    <meta name="twitter:description" content="El Pare Yuriy Shabanov participa en un seminari per a sacerdots de l'UGCC" />
+    <meta name="twitter:image" content="https://igcu-castellon-vinaros-torreblanca.com/img/blog/post8/1.jpg" />
+    <meta name="description" content=""El Pare Yuriy Shabanov participa en un seminari per a sacerdots de l'UGCC"">
+
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCLS8DS737"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PCLS8DS737');
+</script>
+
+<header id="header-placeholder"></header>
+
+<body>
+
+    <main>
+        <section class="single-post-section">
+            <div id="singlePostContainer" class="single-post-container">
+            </div>
+            <a href="index.html" class="back-to-blog-button">Tornar a totes les publicacions</a>
+        </section>
+    </main>
+
+    <script src="../../script/blog-logic.js"></script>
+</body>
+
+<footer id="footer-placeholder"></footer>
+
+<script>
+    // Carregar amb la pàgina
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log("Esdeveniment 'DOMContentLoaded' disparat a post.html o blog.html.");
+
+        // Carregar primer tots els fragments HTML
+        const headerPromise = loadHTML('../header/index.html', 'header-placeholder');
+        const footerPromise = loadHTML('../footer/index.html', 'footer-placeholder');
+
+        Promise.all([headerPromise, footerPromise])
+            .then(() => {
+                console.log("Fragments HTML de capçalera i peu de pàgina carregats amb èxit.");
+
+                // Lògica d'alternança del menú i desplegable (del teu script.js)
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navBar = document.querySelector('.nav-bar');
+                const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
+
+                if (menuToggle && navBar) {
+                    menuToggle.addEventListener('click', function () {
+                        navBar.classList.toggle('active');
+                        dropdowns.forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                    });
+                } else {
+                    console.warn("No s'ha trobat el botó d'alternança del menú o la barra de navegació. Revisa la teva estructura HTML.");
+                }
+
+                dropdowns.forEach(dropdown => {
+                    const dropdownLink = dropdown.querySelector('a');
+                    if (dropdownLink) {
+                        dropdownLink.addEventListener('click', function (event) {
+                            if (window.innerWidth <= 1080) {
+                                event.preventDefault();
+                                dropdown.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+
+
+                initializeLanguageOptions();
+
+            })
+            .catch(error => {
+                console.error('Un o més fragments HTML no s\'han pogut carregar:', error);
+            });
+    });
+</script>
+
+</html>
