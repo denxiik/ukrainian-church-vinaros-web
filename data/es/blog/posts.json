@@ -137,15 +137,26 @@
     ]
   },
   {
-  "id": "post11",
-  "title": "Rito de bendición de un nuevo juego eucarístico para la parroquia de Castellón",
-  "date": "2025-07-06",
-  "content": "Ayer, 5 de julio, antes del inicio de la Divina Liturgia, se llevó a cabo el rito de bendición de un nuevo juego eucarístico para la parroquia de Castellón. También se bendijo un nuevo ilitón, que se utilizará durante el servicio de la Liturgia.<br> Este es otro paso importante para la organización y el equipamiento de la vida de nuestra iglesia. Agradecemos sinceramente a todos los donantes que contribuyeron a esta causa. Que el Señor bendiga a cada uno con creces.",
-  "description": "Rito de bendición de un nuevo juego eucarístico para la parroquia de Castellón",
+    "id": "post11",
+    "title": "Rito de bendición de un nuevo juego eucarístico para la parroquia de Castellón",
+    "date": "2025-07-06",
+    "content": "Ayer, 5 de julio, antes del inicio de la Divina Liturgia, se llevó a cabo el rito de bendición de un nuevo juego eucarístico para la parroquia de Castellón. También se bendijo un nuevo ilitón, que se utilizará durante el servicio de la Liturgia.<br> Este es otro paso importante para la organización y el equipamiento de la vida de nuestra iglesia. Agradecemos sinceramente a todos los donantes que contribuyeron a esta causa. Que el Señor bendiga a cada uno con creces.",
+    "description": "Rito de bendición de un nuevo juego eucarístico para la parroquia de Castellón",
+    "images": [
+      "../../img/blog/post11/1.jpg",
+      "../../img/blog/post11/2.jpg",
+      "../../img/blog/post11/3.jpg"
+    ]
+  },
+  {
+  "id": "post12",
+  "title": "Invitación al concierto de música sacra en Vinaròs.",
+  "date": "2025-07-25",
+  "content": "Te invitamos al concierto de música sacra que tendrá lugar en Vinaròs.",
+  "description": "Te invitamos al concierto de música sacra que tendrá lugar en Vinaròs.",
   "images": [
-    "../../img/blog/post11/1.jpg",
-    "../../img/blog/post11/2.jpg",
-    "../../img/blog/post11/3.jpg"
+    "../../img/blog/post12/1.jpg",
+    "../../img/blog/post12/2.jpg"
   ]
 }
 ]

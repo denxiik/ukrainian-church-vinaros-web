@@ -137,15 +137,26 @@
     ]
   },
   {
-  "id": "post11",
-  "title": "Ritme de benedicció d'un nou joc eucarístic per a la parròquia de Castelló",
-  "date": "2025-07-06",
-  "content": "Ahir, 5 de juliol, abans de l'inici de la Divina Litúrgia, es va dur a terme el ritme de benedicció d'un nou joc eucarístic per a la parròquia de Castelló. També es va beneir un nou ilitó, que s'utilitzarà durant el servici de la Litúrgia.<br> Aquest és un altre pas important per a l'organització i l'equipament de la vida de la nostra església. Agraïm sincerament a tots els donants que van contribuir a aquesta causa. Que el Senyor beneïsca a cadascú amb escreix.",
-  "description": "Ritme de benedicció d'un nou joc eucarístic per a la parròquia de Castelló",
+    "id": "post11",
+    "title": "Ritme de benedicció d'un nou joc eucarístic per a la parròquia de Castelló",
+    "date": "2025-07-06",
+    "content": "Ahir, 5 de juliol, abans de l'inici de la Divina Litúrgia, es va dur a terme el ritme de benedicció d'un nou joc eucarístic per a la parròquia de Castelló. També es va beneir un nou ilitó, que s'utilitzarà durant el servici de la Litúrgia.<br> Aquest és un altre pas important per a l'organització i l'equipament de la vida de la nostra església. Agraïm sincerament a tots els donants que van contribuir a aquesta causa. Que el Senyor beneïsca a cadascú amb escreix.",
+    "description": "Ritme de benedicció d'un nou joc eucarístic per a la parròquia de Castelló",
+    "images": [
+      "../../img/blog/post11/1.jpg",
+      "../../img/blog/post11/2.jpg",
+      "../../img/blog/post11/3.jpg"
+    ]
+  },
+  {
+  "id": "post12",
+  "title": "Invitació al concert de música sacra a Vinaròs.",
+  "date": "2025-07-25",
+  "content": "Et convidem al concert de música sacra que tindrà lloc a Vinaròs.",
+  "description": "Et convidem al concert de música sacra que tindrà lloc a Vinaròs.",
   "images": [
-    "../../img/blog/post11/1.jpg",
-    "../../img/blog/post11/2.jpg",
-    "../../img/blog/post11/3.jpg"
+    "../../img/blog/post12/1.jpg",
+    "../../img/blog/post12/2.jpg"
   ]
 }
 ]
