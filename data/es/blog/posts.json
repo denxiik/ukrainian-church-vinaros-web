@@ -149,24 +149,106 @@
     ]
   },
   {
-  "id": "post12",
-  "title": "Invitación al concierto de música sacra en Vinaròs.",
-  "date": "2025-07-25",
-  "content": "Te invitamos al concierto de música sacra que tendrá lugar en Vinaròs.",
-  "description": "Te invitamos al concierto de música sacra que tendrá lugar en Vinaròs.",
-  "images": [
-    "../../img/blog/post12/1.jpg",
-    "../../img/blog/post12/2.jpg"
-  ]
-},
-{
-  "id": "post13",
-  "title": "¡Apertura de la Escuela Sabatina Ucraniana en la provincia de Castellón!",
-  "date": "2025-07-28",
-  "content": "¡Queridos padres! Nos complace anunciar que a finales de septiembre comenzará a funcionar la escuela ucraniana en la provincia de Castellón.<br>Las clases se impartirán todos los sábados de 9:00 a 13:30.<br>Esta es una oportunidad única para que vuestros hijos conserven el idioma, la cultura y las raíces espirituales de su pueblo, incluso estando en el extranjero.<br>Si no enseñamos a nuestros hijos a ser ucranianos, alguien más lo hará por ellos.<br>📌 ¡La inscripción ya está abierta!<br>El número de contacto para el registro está en el cartel.<br>¡No perdamos la oportunidad de educar un futuro ucraniano consciente!",
-  "description": "📌 ¡La inscripción ya está abierta! <br> El número de contacto para el registro está en el cartel.",
-  "images": [
-    "../../img/blog/post13/1.jpg"
-  ]
-}
+    "id": "post12",
+    "title": "Invitación al concierto de música sacra en Vinaròs.",
+    "date": "2025-07-25",
+    "content": "Te invitamos al concierto de música sacra que tendrá lugar en Vinaròs.",
+    "description": "Te invitamos al concierto de música sacra que tendrá lugar en Vinaròs.",
+    "images": [
+      "../../img/blog/post12/1.jpg",
+      "../../img/blog/post12/2.jpg"
+    ]
+  },
+  {
+    "id": "post13",
+    "title": "¡Apertura de la Escuela Sabatina Ucraniana en la provincia de Castellón!",
+    "date": "2025-07-28",
+    "content": "¡Queridos padres! Nos complace anunciar que a finales de septiembre comenzará a funcionar la escuela ucraniana en la provincia de Castellón.<br>Las clases se impartirán todos los sábados de 9:00 a 13:30.<br>Esta es una oportunidad única para que vuestros hijos conserven el idioma, la cultura y las raíces espirituales de su pueblo, incluso estando en el extranjero.<br>Si no enseñamos a nuestros hijos a ser ucranianos, alguien más lo hará por ellos.<br>📌 ¡La inscripción ya está abierta!<br>El número de contacto para el registro está en el cartel.<br>¡No perdamos la oportunidad de educar un futuro ucraniano consciente!",
+    "description": "📌 ¡La inscripción ya está abierta! <br> El número de contacto para el registro está en el cartel.",
+    "images": [
+      "../../img/blog/post13/1.jpg"
+    ]
+  },
+  {
+    "id": "post14",
+    "title": "Ayer, 9 de agosto, nuestra parroquia en Castellón celebró solemnemente la Fiesta de la Transfiguración del Señor.",
+    "date": "2025-08-10",
+    "content": "Ayer, 9 de agosto, nuestra parroquia en Castellón celebró solemnemente la Fiesta de la Transfiguración del Señor. La Divina Liturgia fue oficiada por dos sacerdotes: el padre Iurii Shabanov y el padre Ivan Rebeha. Que la luz de esta fiesta ilumine nuestros corazones y nos guíe en la vida cotidiana.",
+    "description": "Ayer, 9 de agosto, nuestra parroquia en Castellón celebró solemnemente la Fiesta de la Transfiguración del Señor.",
+    "images": [
+      "../../img/blog/post14/1.jpg",
+      "../../img/blog/post14/2.jpg",
+      "../../img/blog/post14/3.jpg",
+      "../../img/blog/post14/4.jpg",
+      "../../img/blog/post14/5.jpg",
+      "../../img/blog/post14/6.jpg",
+      "../../img/blog/post14/7.jpg",
+      "../../img/blog/post14/8.jpg"
+    ]
+  },
+  {
+    "id": "post15",
+    "title": "En las parroquias de Vinaròs y Torreblanca, se celebró con oración la fiesta de la Transfiguración de Cristo.",
+    "date": "2025-08-10",
+    "content": "En las parroquias de Vinaròs y Torreblanca, se celebró con oración la fiesta de la Transfiguración de Cristo. Durante la Divina Liturgia, los fieles elevaron juntos la acción de gracias a Dios por el don de la luz que transforma y renueva nuestras almas. Después de la Misa, tuvo lugar la bendición de los primeros frutos, como señal de gratitud por la generosidad y el amor divinos. A la luz de la Transfiguración de Cristo, oramos para que el Señor nos transforme también a cada uno de nosotros, dándonos la fuerza para vivir con un corazón puro y un alma abierta. Que la alegría de esta fiesta ilumine nuestros corazones y traiga paz y tranquilidad a Ucrania.",
+    "description": "En las parroquias de Vinaròs y Torreblanca, se celebró con oración la fiesta de la Transfiguración de Cristo.",
+    "images": [
+      "../../img/blog/post15/1.jpg",
+      "../../img/blog/post15/2.jpg",
+      "../../img/blog/post15/3.jpg",
+      "../../img/blog/post15/4.jpg",
+      "../../img/blog/post15/5.jpg",
+      "../../img/blog/post15/6.jpg",
+      "../../img/blog/post15/7.jpg",
+      "../../img/blog/post15/8.jpg",
+      "../../img/blog/post15/9.jpg",
+      "../../img/blog/post15/10.jpg",
+      "../../img/blog/post15/11.jpg",
+      "../../img/blog/post15/12.jpg"
+    ]
+  },
+  {
+    "id": "post16",
+    "title": "Ayer en Castellón se bendijo el Santo Entierro de la Santísima Madre de Dios.",
+    "date": "2025-08-17",
+    "content": "Ayer en Castellón se bendijo el Santo Entierro de la Santísima Madre de Dios. Los fieles se reunieron para la oración, celebrando el misterio de cuando Jesús llevó a su Madre con cuerpo y alma a la gloria celestial. La Iglesia Católica enseña que la Asunción es un signo de la victoria de la vida sobre la muerte y una esperanza para cada cristiano. En sus oraciones, los fieles pidieron a la Madre Celestial paz para Ucrania, así como su constante intercesión y acompañamiento hacia su Hijo, Jesús. Este evento fue un testimonio profundo del amor y la fe de la comunidad.",
+    "description": "Ayer en Castellón se bendijo el Santo Entierro de la Santísima Madre de Dios.",
+    "images": [
+      "../../img/blog/post16/1.jpg",
+      "../../img/blog/post16/2.jpg",
+      "../../img/blog/post16/3.jpg",
+      "../../img/blog/post16/4.jpg",
+      "../../img/blog/post16/5.jpg",
+      "../../img/blog/post16/6.jpg"
+    ]
+  },
+  {
+    "id": "post17",
+    "title": "Fiesta de la Asunción de la Santísima Madre de Dios.",
+    "date": "2025-08-17",
+    "content": "Fiesta de la Asunción de la Santísima Madre de Dios. <br> Las comunidades parroquiales de las ciudades de Vinaròs y Torreblanca celebraron solemnemente la fiesta de la Asunción de la Santísima Madre de Dios. En Vinaròs, la Liturgia festiva fue oficiada por 2 sacerdotes, el padre Iurii y el padre Andrii de Alemania, quien está de vacaciones en España. <br> Después del servicio, los fieles de ambas parroquias tuvieron la oportunidad de hacer una oración conjunta por la paz en Ucrania, «Reina nuestra, bendita», y también de acercarse al Santo Entierro de la Santísima Madre de Dios. <br> La fiesta terminó en un ambiente elevado, dejando en los corazones de todos los presentes una sensación de la cercanía de Dios y el cuidado maternal de la Madre de Dios, que siempre guía a sus hijos hacia la Salvación.",
+    "description": "Fiesta de la Asunción de la Santísima Madre de Dios.",
+    "images": [
+      "../../img/blog/post17/1.jpg",
+      "../../img/blog/post17/2.jpg",
+      "../../img/blog/post17/3.jpg"
+    ]
+  },
+  {
+    "id": "post18",
+    "title": "Ayer en Vinaròs la comunidad ucraniana se reunió para celebrar el Día de la Independencia de Ucrania.",
+    "date": "2025-08-25",
+    "content": "Ayer en Vinaròs la comunidad ucraniana se reunió para celebrar el Día de la Independencia de Ucrania. El padre Iurii dio un discurso de apertura y una oración, recordando que la Independencia es un don de Dios, pero un don probado por la historia. En su discurso, subrayó que Ucrania ha luchado por la libertad desde 1991, pero constantemente se le ha intentado privar de este derecho. Así como Cristo llevó su Cruz, Ucrania hoy lleva la suya, a través del dolor, el sufrimiento y la lucha. Se elevaron oraciones por la paz, por los héroes caídos y también por los soldados vivos en cautiverio, para que el Señor los ayude a regresar a casa. El padre Iurii destacó que donde hay Verdad y Justicia, allí está Dios, y contra Dios nadie puede vencer. Ucrania se mantiene, ora, lucha y cree en la victoria, porque la última palabra siempre pertenece al Señor. El ambiente de la celebración estuvo lleno de patriotismo, unidad y esperanza. Sincero agradecimiento a la Asociación de Ucranianos en Benicarló, así como a todos los ucranianos presentes en esta celebración, al grupo «Podillia» y a otros participantes que con su canto y actuaciones añadieron fuerza e inspiración a este día. Esta celebración fue un testimonio de nuestra inquebrantable fe y creencia en la victoria de Dios para Ucrania.",
+    "description": "Ayer en Vinaròs la comunidad ucraniana se reunió para celebrar el Día de la Independencia de Ucrania.",
+    "images": [
+      "../../img/blog/post18/1.jpg",
+      "../../img/blog/post18/2.jpg",
+      "../../img/blog/post18/3.jpg",
+      "../../img/blog/post18/4.jpg",
+      "../../img/blog/post18/5.jpg",
+      "../../img/blog/post18/6.jpg",
+      "../../img/blog/post18/7.jpg",
+      "../../img/blog/post18/8.jpg"
+    ]
+  }
 ]

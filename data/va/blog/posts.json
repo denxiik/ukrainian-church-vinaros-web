@@ -149,24 +149,106 @@
     ]
   },
   {
-  "id": "post12",
-  "title": "Invitació al concert de música sacra a Vinaròs.",
-  "date": "2025-07-25",
-  "content": "Et convidem al concert de música sacra que tindrà lloc a Vinaròs.",
-  "description": "Et convidem al concert de música sacra que tindrà lloc a Vinaròs.",
-  "images": [
-    "../../img/blog/post12/1.jpg",
-    "../../img/blog/post12/2.jpg"
-  ]
-},
-{
-  "id": "post13",
-  "title": "¡Obertura de l'Escola de Dissabte Ucraïnesa a la província de Castelló!",
-  "date": "2025-07-28",
-  "content": "Estimats pares! Ens complau anunciar que a finals de setembre començarà a funcionar l'escola ucraïnesa a la província de Castelló.<br>Les classes es faran tots els dissabtes de 9:00 a 13:30.<br>Aquesta és una oportunitat única perquè els vostres fills conserven l'idioma, la cultura i les arrels espirituals del seu poble, fins i tot estant a l'estranger.<br>Si no ensenyem als nostres fills a ser ucraïnesos, algú altre ho farà per ells.<br>📌 ¡La inscripció ja està oberta!<br>El número de contacte per al registre està al cartell.<br>¡No perdem l'oportunitat d'educar un futur ucraïnès conscient!",
-  "description": "📌 ¡La inscripció ja està oberta! <br> El número de contacte per al registre està al cartell.",
-  "images": [
-    "../../img/blog/post13/1.jpg"
-  ]
-}
+    "id": "post12",
+    "title": "Invitació al concert de música sacra a Vinaròs.",
+    "date": "2025-07-25",
+    "content": "Et convidem al concert de música sacra que tindrà lloc a Vinaròs.",
+    "description": "Et convidem al concert de música sacra que tindrà lloc a Vinaròs.",
+    "images": [
+      "../../img/blog/post12/1.jpg",
+      "../../img/blog/post12/2.jpg"
+    ]
+  },
+  {
+    "id": "post13",
+    "title": "¡Obertura de l'Escola de Dissabte Ucraïnesa a la província de Castelló!",
+    "date": "2025-07-28",
+    "content": "Estimats pares! Ens complau anunciar que a finals de setembre començarà a funcionar l'escola ucraïnesa a la província de Castelló.<br>Les classes es faran tots els dissabtes de 9:00 a 13:30.<br>Aquesta és una oportunitat única perquè els vostres fills conserven l'idioma, la cultura i les arrels espirituals del seu poble, fins i tot estant a l'estranger.<br>Si no ensenyem als nostres fills a ser ucraïnesos, algú altre ho farà per ells.<br>📌 ¡La inscripció ja està oberta!<br>El número de contacte per al registre està al cartell.<br>¡No perdem l'oportunitat d'educar un futur ucraïnès conscient!",
+    "description": "📌 ¡La inscripció ja està oberta! <br> El número de contacte per al registre està al cartell.",
+    "images": [
+      "../../img/blog/post13/1.jpg"
+    ]
+  },
+  {
+    "id": "post14",
+    "title": "Ahir, 9 d'agost, la nostra parròquia a Castelló va celebrar solemnement la Festa de la Transfiguració del Senyor.",
+    "date": "2025-08-10",
+    "content": "Ahir, 9 d'agost, la nostra parròquia a Castelló va celebrar solemnement la Festa de la Transfiguració del Senyor. La Divina Litúrgia va ser oficiada per dos sacerdots, el pare Iurii Shabanov i el pare Ivan Rebeha. Que la llum d'aquesta festa il·lumine els nostres cors i ens guie en la vida quotidiana.",
+    "description": "Ahir, 9 d'agost, la nostra parròquia a Castelló va celebrar solemnement la Festa de la Transfiguració del Senyor.",
+    "images": [
+      "../../img/blog/post14/1.jpg",
+      "../../img/blog/post14/2.jpg",
+      "../../img/blog/post14/3.jpg",
+      "../../img/blog/post14/4.jpg",
+      "../../img/blog/post14/5.jpg",
+      "../../img/blog/post14/6.jpg",
+      "../../img/blog/post14/7.jpg",
+      "../../img/blog/post14/8.jpg"
+    ]
+  },
+  {
+    "id": "post15",
+    "title": "A les parròquies de Vinaròs i Torreblanca, es va celebrar amb oració la festa de la Transfiguració de Crist.",
+    "date": "2025-08-10",
+    "content": "A les parròquies de Vinaròs i Torreblanca, es va celebrar amb oració la festa de la Transfiguració de Crist. Durant la Divina Litúrgia, els fidels van elevar junts l'acció de gràcies a Déu pel do de la llum que transforma i renova les nostres ànimes. Després de la Missa, va tenir lloc la benedicció dels primers fruits, com a senyal de gratitud per la generositat i l'amor divins. A la llum de la Transfiguració de Crist, vam pregar perquè el Senyor ens transformi també a cadascun de nosaltres, donant-nos la força per viure amb un cor pur i una ànima oberta. Que l'alegria d'aquesta festa il·lumine els nostres cors i porti pau i tranquil·litat a Ucraïna.",
+    "description": "A les parròquies de Vinaròs i Torreblanca, es va celebrar amb oració la festa de la Transfiguració de Crist.",
+    "images": [
+      "../../img/blog/post15/1.jpg",
+      "../../img/blog/post15/2.jpg",
+      "../../img/blog/post15/3.jpg",
+      "../../img/blog/post15/4.jpg",
+      "../../img/blog/post15/5.jpg",
+      "../../img/blog/post15/6.jpg",
+      "../../img/blog/post15/7.jpg",
+      "../../img/blog/post15/8.jpg",
+      "../../img/blog/post15/9.jpg",
+      "../../img/blog/post15/10.jpg",
+      "../../img/blog/post15/11.jpg",
+      "../../img/blog/post15/12.jpg"
+    ]
+  },
+  {
+    "id": "post16",
+    "title": "Ahir a Castelló es va beneir el Sant Enterrament de la Santíssima Mare de Déu.",
+    "date": "2025-08-17",
+    "content": "Ahir a Castelló es va beneir el Sant Enterrament de la Santíssima Mare de Déu. Els fidels es van reunir per a l'oració, celebrant el misteri de quan Jesús va portar la seva Mare amb cos i ànima a la glòria celestial. L'Església Catòlica ensenya que l'Assumpció és un signe de la victòria de la vida sobre la mort i una esperança per a cada cristià. En les seves oracions, els fidels van demanar a la Mare Celestial pau per a Ucraïna, així com la seva constant intercessió i acompanyament cap al seu Fill, Jesús. Aquest esdeveniment va ser un testimoni profund de l'amor i la fe de la comunitat.",
+    "description": "Ahir a Castelló es va beneir el Sant Enterrament de la Santíssima Mare de Déu.",
+    "images": [
+      "../../img/blog/post16/1.jpg",
+      "../../img/blog/post16/2.jpg",
+      "../../img/blog/post16/3.jpg",
+      "../../img/blog/post16/4.jpg",
+      "../../img/blog/post16/5.jpg",
+      "../../img/blog/post16/6.jpg"
+    ]
+  },
+  {
+    "id": "post17",
+    "title": "Festa de l'Assumpció de la Santíssima Mare de Déu.",
+    "date": "2025-08-17",
+    "content": "Festa de l'Assumpció de la Santíssima Mare de Déu. <br> Les comunitats parroquials de les ciutats de Vinaròs i Torreblanca van celebrar solemnement la festa de l'Assumpció de la Santíssima Mare de Déu. A Vinaròs, la Litúrgia festiva va ser oficiada per 2 sacerdots, el pare Iurii i el pare Andrii d'Alemanya, que està de vacances a Espanya. <br> Després del servei, els fidels de les dues parròquies van tenir l'oportunitat de fer una pregària conjunta per la pau a Ucraïna, «Reina nostra, beneïda», i també d'apropar-se al Sant Enterrament de la Santíssima Mare de Déu. <br> La festa va acabar en un ambient elevat, deixant en els cors de tots els presents una sensació de la proximitat de Déu i la cura maternal de la Mare de Déu, que sempre guia els seus fills cap a la Salvació.",
+    "description": "Festa de l'Assumpció de la Santíssima Mare de Déu.",
+    "images": [
+      "../../img/blog/post17/1.jpg",
+      "../../img/blog/post17/2.jpg",
+      "../../img/blog/post17/3.jpg"
+    ]
+  },
+  {
+    "id": "post18",
+    "title": "Ahir a Vinaròs la comunitat ucraïnesa es va reunir per celebrar el Dia de la Independència d'Ucraïna.",
+    "date": "2025-08-25",
+    "content": "Ahir a Vinaròs la comunitat ucraïnesa es va reunir per celebrar el Dia de la Independència d'Ucraïna. El pare Iurii va fer un discurs d'obertura i una oració, recordant que la Independència és un do de Déu, però un do provat per la història. En el seu discurs, va subratllar que Ucraïna ha lluitat per la llibertat des de 1991, però constantment se li ha intentat privar d'aquest dret. Així com Crist va portar la seva Creu, Ucraïna avui porta la seva, a través del dolor, el sofriment i la lluita. Es van elevar oracions per la pau, pels herois caiguts i també pels soldats vius en captivitat, perquè el Senyor els ajudi a tornar a casa. El pare Iurii va destacar que on hi ha Veritat i Justícia, hi ha Déu, i contra Déu ningú no pot vèncer. Ucraïna es manté, prega, lluita i creu en la victòria, perquè l'última paraula sempre pertany al Senyor. L'ambient de la celebració va estar ple de patriotisme, unitat i esperança. Sincer agraïment a l'Associació d'Ucraïnesos a Benicarló, així com a tots els ucraïnesos presents en aquesta celebració, al grup «Podillia» i a altres participants que amb el seu cant i actuacions van afegir força i inspiració a aquest dia. Aquesta celebració va ser un testimoni de la nostra inquebrantable fe i creença en la victòria de Déu per a Ucraïna.",
+    "description": "Ahir a Vinaròs la comunitat ucraïnesa es va reunir per celebrar el Dia de la Independència d'Ucraïna.",
+    "images": [
+      "../../img/blog/post18/1.jpg",
+      "../../img/blog/post18/2.jpg",
+      "../../img/blog/post18/3.jpg",
+      "../../img/blog/post18/4.jpg",
+      "../../img/blog/post18/5.jpg",
+      "../../img/blog/post18/6.jpg",
+      "../../img/blog/post18/7.jpg",
+      "../../img/blog/post18/8.jpg"
+    ]
+  }
 ]

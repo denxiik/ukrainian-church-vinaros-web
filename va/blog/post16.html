@@ -1,44 +1,43 @@
 <!DOCTYPE html>
-<html lang="ukr">
+<html lang="va">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Відкриття Української Суботньої Школи у провінції Кастельйон!</title>
+    <title>Ahir a Castelló es va beneir el Sant Enterrament de la Santíssima Mare de Déu.</title>
     <link rel="icon" href="../../img/logo.webp">
 
     <link rel="stylesheet" href="../../css/blog.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="../../script/script.js"></script>
 
-    <link rel="alternate" hreflang="en" href="https://nasha-tserkva/en/blog/post13.html" />
-    <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/blog/post13.html" />
+    <link rel="alternate" hreflang="en" href="https://nasha-tserkva/en/blog/post16.html" />
+    <link rel="alternate" hreflang="es" href="https://nasha-tserkva/es/blog/post16.html" />
 
-    <meta property="og:url" content="https://igcu-castellon-vinaros-torreblanca.com/ukr/blog/post13.html" />
+    <meta property="og:url" content="https://igcu-castellon-vinaros-torreblanca.com/va/blog/post16.html" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Відкриття Української Суботньої Школи у провінції Кастельйон!" />
-    <meta property="og:description" content="📌 Запис вже відкрито! Контактний номер для реєстрації — у афіші." />
-    <meta property="og:image" content="https://igcu-castellon-vinaros-torreblanca.com/img/blog/post13/1.jpg" />
-    <meta property="og:image:alt" content="Відкриття Української Суботньої Школи у провінції Кастельйон!" />
+    <meta property="og:title" content="Ahir a Castelló es va beneir el Sant Enterrament de la Santíssima Mare de Déu." />
+    <meta property="og:description" content="Ahir a Castelló es va beneir el Sant Enterrament de la Santíssima Mare de Déu." />
+    <meta property="og:image" content="https://igcu-castellon-vinaros-torreblanca.com/img/blog/post16/1.jpg" />
+    <meta property="og:image:alt" content="Ahir a Castelló es va beneir el Sant Enterrament de la Santíssima Mare de Déu." />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:domain" content="nasha-tserkva.com" />
-    <meta name="twitter:url" content="https://igcu-castellon-vinaros-torreblanca.com/ukr/blog/post13.html" />
-    <meta name="twitter:title" content="Відкриття Української Суботньої Школи у провінції Кастельйон!" />
-    <meta name="twitter:description" content="📌 Запис вже відкрито! Контактний номер для реєстрації — у афіші." />
-    <meta name="twitter:image" content="https://igcu-castellon-vinaros-torreblanca.com/img/blog/post13/1.jpg" />
-    <meta name="description" content=""📌 Запис вже відкрито! Контактний номер для реєстрації — у афіші."">
+    <meta name="twitter:url" content="https://igcu-castellon-vinaros-torreblanca.com/va/blog/post16.html" />
+    <meta name="twitter:title" content="Ahir a Castelló es va beneir el Sant Enterrament de la Santíssima Mare de Déu." />
+    <meta name="twitter:description" content="Ahir a Castelló es va beneir el Sant Enterrament de la Santíssima Mare de Déu." />
+    <meta name="twitter:image" content="https://igcu-castellon-vinaros-torreblanca.com/img/blog/post16/1.jpg" />
+    <meta name="description" content=""Ahir a Castelló es va beneir el Sant Enterrament de la Santíssima Mare de Déu."">
 
 </head>
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCLS8DS737"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-PCLS8DS737');
+    gtag('config', 'G-PCLS8DS737');
 </script>
 
 <header id="header-placeholder"></header>
@@ -48,8 +47,8 @@
     <main>
         <section class="single-post-section">
             <div id="singlePostContainer" class="single-post-container">
-                </div>
-            <a href="index.html" class="back-to-blog-button">Повернутися до всіх дописів</a>
+            </div>
+            <a href="index.html" class="back-to-blog-button">Tornar a totes les publicacions</a>
         </section>
     </main>
 
@@ -59,19 +58,19 @@
 <footer id="footer-placeholder"></footer>
 
 <script>
-    // Load with page
+    // Carregar amb la pàgina
     document.addEventListener('DOMContentLoaded', function () {
-        console.log("DOM Content Loaded event fired in post.html or blog.html.");
+        console.log("Esdeveniment 'DOMContentLoaded' disparat a post.html o blog.html.");
 
-        // Load all HTML fragments first
+        // Carregar primer tots els fragments HTML
         const headerPromise = loadHTML('../header/index.html', 'header-placeholder');
         const footerPromise = loadHTML('../footer/index.html', 'footer-placeholder');
 
         Promise.all([headerPromise, footerPromise])
             .then(() => {
-                console.log("Header and footer HTML fragments loaded successfully.");
+                console.log("Fragments HTML de capçalera i peu de pàgina carregats amb èxit.");
 
-                // Menu toggle and dropdown logic (from your script.js)
+                // Lògica d'alternança del menú i desplegable (del teu script.js)
                 const menuToggle = document.querySelector('.menu-toggle');
                 const navBar = document.querySelector('.nav-bar');
                 const dropdowns = document.querySelectorAll('.nav-bar .dropdown');
@@ -84,7 +83,7 @@
                         });
                     });
                 } else {
-                    console.warn("Menu toggle or nav bar not found. Check your HTML structure.");
+                    console.warn("No s'ha trobat el botó d'alternança del menú o la barra de navegació. Revisa la teva estructura HTML.");
                 }
 
                 dropdowns.forEach(dropdown => {
@@ -99,11 +98,12 @@
                     }
                 });
 
+
                 initializeLanguageOptions();
 
             })
             .catch(error => {
-                console.error('One or more HTML fragments failed to load:', error);
+                console.error('Un o més fragments HTML no s\'han pogut carregar:', error);
             });
     });
 </script>
