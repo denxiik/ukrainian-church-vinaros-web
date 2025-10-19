@@ -344,5 +344,15 @@
       "../../img/blog/post24/6.jpg",
       "../../img/blog/post24/7.jpg"
     ]
+  },
+  {
+    "id": "post25",
+    "title": "Estamos en Lourdes. En oración a la Santísima Virgen María por nuestra Ucrania. ¡Gloria a Dios por todo!",
+    "date": "2025-10-19",
+    "content": "Estamos en Lourdes. En oración a la Santísima Virgen María por nuestra Ucrania. ¡Gloria a Dios por todo!",
+    "description": "Estamos en Lourdes. En oración a la Santísima Virgen María por nuestra Ucrania. ¡Gloria a Dios por todo!",
+    "images": [
+      "../../img/blog/post24/1.jpg"
+    ]
   }
 ]
