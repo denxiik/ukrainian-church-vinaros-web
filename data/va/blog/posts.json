@@ -406,5 +406,42 @@
       "../../img/blog/post27/15.jpg",
       "../../img/blog/post27/16.jpg"
     ]
+  },
+  {
+    "id": "post28",
+    "title": "CRIST HA RESSUSCITAT!",
+    "date": "2026-04-05",
+    "content": "CRIST HA RESSUSCITAT!",
+    "description": "EN VERITAT HA RESSUSCITAT!",
+    "images": [
+      "../../img/blog/post28/1.jpg",
+      "../../img/blog/post28/2.jpg",
+      "../../img/blog/post28/3.jpg",
+      "../../img/blog/post28/4.jpg",
+      "../../img/blog/post28/5.jpg",
+      "../../img/blog/post28/5.jpg",
+      "../../img/blog/post28/6.jpg",
+      "../../img/blog/post28/7.jpg",
+      "../../img/blog/post28/8.jpg",
+      "../../img/blog/post28/9.jpg",
+      "../../img/blog/post28/10.jpg",
+      "../../img/blog/post28/11.jpg",
+      "../../img/blog/post28/12.jpg",
+      "../../img/blog/post28/13.jpg"
+    ]
+  },
+  {
+    "id": "post29",
+    "title": "Hui, 12 d'abril de 2026, hem celebrat la nostra festa patronal en Torreblanca 🙏",
+    "date": "2026-04-12",
+    "content": "Hui, 12 d'abril de 2026, hem celebrat la nostra festa patronal en Torreblanca 🙏",
+    "description": "Gràcies a tots els que heu estat amb nosaltres.",
+    "images": [
+      "../../img/blog/post29/1.jpg",
+      "../../img/blog/post29/2.jpg",
+      "../../img/blog/post29/3.jpg",
+      "../../img/blog/post29/4.jpg",
+      "../../img/blog/post29/5.jpg"
+    ]
   }
 ]

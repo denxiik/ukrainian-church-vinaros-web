@@ -406,5 +406,42 @@
       "../../img/blog/post27/15.jpg",
       "../../img/blog/post27/16.jpg"
     ]
+  },
+  {
+    "id": "post28",
+    "title": "¡CRISTO HA RESUCITADO!",
+    "date": "2026-04-05",
+    "content": "¡CRISTO HA RESUCITADO!",
+    "description": "¡EN VERDAD HA RESUCITADO!",
+    "images": [
+      "../../img/blog/post28/1.jpg",
+      "../../img/blog/post28/2.jpg",
+      "../../img/blog/post28/3.jpg",
+      "../../img/blog/post28/4.jpg",
+      "../../img/blog/post28/5.jpg",
+      "../../img/blog/post28/5.jpg",
+      "../../img/blog/post28/6.jpg",
+      "../../img/blog/post28/7.jpg",
+      "../../img/blog/post28/8.jpg",
+      "../../img/blog/post28/9.jpg",
+      "../../img/blog/post28/10.jpg",
+      "../../img/blog/post28/11.jpg",
+      "../../img/blog/post28/12.jpg",
+      "../../img/blog/post28/13.jpg"
+    ]
+  },
+  {
+    "id": "post29",
+    "title": "Hoy, 12 de abril de 2026, celebramos nuestra fiesta patronal en Torreblanca 🙏",
+    "date": "2026-04-12",
+    "content": "Hoy, 12 de abril de 2026, celebramos nuestra fiesta patronal en Torreblanca 🙏",
+    "description": "Gracias a todos los que estuvieron con nosotros.",
+    "images": [
+      "../../img/blog/post29/1.jpg",
+      "../../img/blog/post29/2.jpg",
+      "../../img/blog/post29/3.jpg",
+      "../../img/blog/post29/4.jpg",
+      "../../img/blog/post29/5.jpg"
+    ]
   }
 ]
